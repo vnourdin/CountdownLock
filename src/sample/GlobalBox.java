@@ -1,5 +1,6 @@
 package sample;
 
+import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.VBox;
@@ -21,6 +22,9 @@ public class GlobalBox extends VBox {
         MyStartCountdownButton startButton = new MyStartCountdownButton(this);
         this.fieldsGrid = new GridPane();
         this.fieldsGrid.setAlignment(Pos.CENTER);
+        this.fieldsGrid.setVgap(20);
+        this.fieldsGrid.setHgap(20);
+        this.fieldsGrid.setPadding(new Insets(0, 0, 50, 0));
 
         for (int wordsIndice = 0, row = 0, column = 0; wordsIndice < this.words.length; wordsIndice++, column++) {
             if (wordsIndice % 2 == 0) {
