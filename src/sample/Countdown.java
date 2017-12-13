@@ -6,7 +6,6 @@ import javafx.animation.Timeline;
 import javafx.beans.property.IntegerProperty;
 import javafx.beans.property.SimpleIntegerProperty;
 import javafx.scene.Parent;
-import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.GridPane;
 import javafx.util.Duration;
@@ -48,14 +47,6 @@ public class Countdown extends Parent {
         this.secondsTimeline = new Timeline();
         this.secondsTimeline.getKeyFrames().add(secondsKeyFrame);
 
-        // Button
-        Button button = new Button();
-        button.setText("Démarrer");
-        button.setOnAction(event -> {
-            this.secondsTimeline.playFromStart();
-            button.setVisible(false);
-        });
-
         // Layout
         GridPane layout = new GridPane();
         // layout.setAlignment(Pos.CENTER);
@@ -66,8 +57,11 @@ public class Countdown extends Parent {
         layout.add(minutesLabel, 0, 0);
         layout.add(doublePoints, 1, 0);
         layout.add(secondsLabel, 2, 0);
-        layout.add(button, 1, 1);
 
         this.getChildren().add(layout);
+    }
+
+    public void start() {
+        this.secondsTimeline.playFromStart();
     }
 }
