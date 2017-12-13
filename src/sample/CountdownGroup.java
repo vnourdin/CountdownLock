@@ -15,7 +15,7 @@ public class CountdownGroup extends VBox {
         this.words = words;
         this.setAlignment(Pos.CENTER);
 
-        this.countdown = new Countdown(3);
+        this.countdown = new Countdown(20);
         StartCountdownButton button = new StartCountdownButton(this);
         this.fieldsGrid = new GridPane();
         this.fieldsGrid.setAlignment(Pos.CENTER);

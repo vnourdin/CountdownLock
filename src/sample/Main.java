@@ -11,7 +11,7 @@ public class Main extends Application {
     public void start(Stage primaryStage) {
         primaryStage.setTitle("Compte à rebours");
 
-        String[] words = {"Miam", "Test", "autre", "encore", "dernier"};
+        String[] words = {"Miam", "Test", "autre", "encore"};
         CountdownGroup countdownGroup = new CountdownGroup(words);
         Scene scene = new Scene(countdownGroup, 700, 800);
 
