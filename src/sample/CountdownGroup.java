@@ -13,7 +13,7 @@ public class CountdownGroup extends VBox {
         this.setAlignment(Pos.CENTER);
 
         Countdown countdown = new Countdown(3);
-        MyButton button = new MyButton(countdown);
+        StartCountdownButton button = new StartCountdownButton(countdown);
 
         this.getChildren().addAll(countdown, button);
 
