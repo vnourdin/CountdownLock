@@ -11,9 +11,9 @@ public class Main extends Application {
     public void start(Stage primaryStage) {
         primaryStage.setTitle("Compte à rebours");
 
-        String[] words = {"Miam", "Test", "autre", "encore"};
-        CountdownGroup countdownGroup = new CountdownGroup(words);
-        Scene scene = new Scene(countdownGroup);
+        String[] words = {"This", "is", "a", "test"};
+        GlobalBox globalBox = new GlobalBox(words);
+        Scene scene = new Scene(globalBox);
 
         primaryStage.setScene(scene);
         primaryStage.setFullScreen(true);

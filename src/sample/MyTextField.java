@@ -1,6 +1,5 @@
 package sample;
 
-import javafx.geometry.Insets;
 import javafx.scene.control.TextField;
 import javafx.scene.text.Font;
 
@@ -11,5 +10,9 @@ public class MyTextField extends TextField {
         super();
         this.passphrase = passphrase;
         this.setFont(new Font(40));
+    }
+
+    public boolean isWellFilled() {
+        return (this.getText().equals(this.passphrase));
     }
 }

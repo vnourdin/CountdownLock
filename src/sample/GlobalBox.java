@@ -1,22 +1,26 @@
 package sample;
 
 import javafx.geometry.Pos;
+import javafx.scene.control.Label;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.VBox;
+import javafx.scene.paint.Color;
 
-public class CountdownGroup extends VBox {
+public class GlobalBox extends VBox {
 
     private String[] words;
     private Countdown countdown;
     private GridPane fieldsGrid;
+    private MyFinishButton finishButton;
+    private Label errorLabel;
 
-    public CountdownGroup(String[] words) {
+    public GlobalBox(String[] words) {
         super(20);
         this.words = words;
         this.setAlignment(Pos.CENTER);
 
         this.countdown = new Countdown(20);
-        MyStartCountdownButton button = new MyStartCountdownButton(this);
+        MyStartCountdownButton startButton = new MyStartCountdownButton(this);
         this.fieldsGrid = new GridPane();
         this.fieldsGrid.setAlignment(Pos.CENTER);
 
@@ -28,7 +32,14 @@ public class CountdownGroup extends VBox {
             this.fieldsGrid.add(new MyTextField(this.words[wordsIndice]), column, row);
         }
         this.fieldsGrid.setVisible(false);
-        this.getChildren().addAll(this.countdown, button, this.fieldsGrid);
+        this.finishButton = new MyFinishButton(this);
+
+        this.errorLabel = new Label("Erreur, réesayez!");
+        this.errorLabel.setTextFill(Color.RED);
+        this.errorLabel.setStyle("-fx-font-size: 2em");
+        this.errorLabel.setVisible(false);
+
+        this.getChildren().addAll(this.countdown, startButton, this.fieldsGrid, finishButton, this.errorLabel);
     }
 
     public void startCountdown() {
@@ -37,5 +48,19 @@ public class CountdownGroup extends VBox {
 
     public void showFields() {
         this.fieldsGrid.setVisible(true);
+        this.finishButton.setVisible(true);
+    }
+
+    public void checkWords() {
+        boolean everyFieldsWellFilled = true;
+        for (int i = 0; i < this.fieldsGrid.getChildren().size(); i++) {
+            if (!((MyTextField) (this.fieldsGrid.getChildren().get(i))).isWellFilled())
+                everyFieldsWellFilled = false;
+        }
+        if (everyFieldsWellFilled) {
+            this.getChildren().clear();
+            this.getChildren().add(new MyLabel("Bravo vous avez réussi!"));
+        } else
+            this.errorLabel.setVisible(true);
     }
 }
