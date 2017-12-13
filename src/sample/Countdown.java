@@ -4,6 +4,7 @@ import javafx.animation.KeyFrame;
 import javafx.animation.KeyValue;
 import javafx.animation.Timeline;
 import javafx.geometry.Insets;
+import javafx.scene.Cursor;
 import javafx.scene.Parent;
 import javafx.scene.control.Label;
 import javafx.scene.layout.HBox;
@@ -13,6 +14,9 @@ public class Countdown extends Parent {
     private Timeline secondsTimeline;
 
     public Countdown(int duration) {
+        super();
+        this.setCursor(Cursor.WAIT);
+
         // Properties
         MyIntegerProperties minutes = new MyIntegerProperties(duration - 1);
         MyIntegerProperties seconds = new MyIntegerProperties(59);
