@@ -8,7 +8,6 @@ import javafx.beans.property.SimpleIntegerProperty;
 import javafx.scene.Parent;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-import javafx.scene.paint.Color;
 import javafx.util.Duration;
 
 public class Countdown extends Parent {
@@ -16,20 +15,20 @@ public class Countdown extends Parent {
     private Timeline secondsTimeline;
 
     public Countdown(int duration) {
-        Label minutesLabel = new Label();
-        Label doublePoints = new Label(":");
-        Label secondsLabel = new Label();
-
+        // Properties
         this.minutes = new SimpleIntegerProperty(duration - 1);
         this.seconds = new SimpleIntegerProperty(60);
 
+        // Labels
+        Label minutesLabel = new MyLabel();
         minutesLabel.textProperty().bind(minutes.asString());
+
+        Label doublePoints = new MyLabel(":");
+
+        Label secondsLabel = new MyLabel();
         secondsLabel.textProperty().bind(seconds.asString());
 
-        configLabel(minutesLabel);
-        configLabel(secondsLabel);
-        configLabel(doublePoints);
-
+        // KeyFrame
         KeyFrame secondsKeyFrame = new KeyFrame(Duration.seconds(60),
                 "Secondes",
                 onFinished -> {
@@ -44,9 +43,11 @@ public class Countdown extends Parent {
                 },
                 new KeyValue(this.seconds, 0));
 
+        // TimeLine
         this.secondsTimeline = new Timeline();
         this.secondsTimeline.getKeyFrames().add(secondsKeyFrame);
 
+        // Button
         Button button = new Button();
         button.setText("Démarrer");
         button.setOnAction(event -> {
@@ -54,11 +55,7 @@ public class Countdown extends Parent {
             button.setVisible(false);
         });
 
+        // Add children
         this.getChildren().addAll(minutesLabel, doublePoints, secondsLabel, button);
-    }
-
-    private void configLabel(Label toConfig) {
-        toConfig.setTextFill(Color.DARKCYAN);
-        toConfig.setStyle("-fx-font-size: 5em");
     }
 }
