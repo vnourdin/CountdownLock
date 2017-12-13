@@ -1,10 +1,8 @@
 package sample;
 
 import javafx.geometry.Pos;
-import javafx.scene.control.Label;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.VBox;
-import javafx.scene.paint.Color;
 
 public class GlobalBox extends VBox {
 
@@ -12,7 +10,7 @@ public class GlobalBox extends VBox {
     private Countdown countdown;
     private GridPane fieldsGrid;
     private MyFinishButton finishButton;
-    private Label errorLabel;
+    private MyErrorLabel errorLabel;
 
     public GlobalBox(String[] words) {
         super(20);
@@ -35,10 +33,7 @@ public class GlobalBox extends VBox {
         this.fieldsGrid.setAlignment(Pos.CENTER);
         this.finishButton = new MyFinishButton(this);
 
-        this.errorLabel = new Label("Erreur, réesayez!");
-        this.errorLabel.setTextFill(Color.RED);
-        this.errorLabel.setStyle("-fx-font-size: 2em");
-        this.errorLabel.setVisible(false);
+        this.errorLabel = new MyErrorLabel();
 
         this.getChildren().addAll(this.countdown, startButton, this.fieldsGrid, finishButton, this.errorLabel);
     }
