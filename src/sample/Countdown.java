@@ -3,8 +3,6 @@ package sample;
 import javafx.animation.KeyFrame;
 import javafx.animation.KeyValue;
 import javafx.animation.Timeline;
-import javafx.beans.property.IntegerProperty;
-import javafx.beans.property.SimpleIntegerProperty;
 import javafx.geometry.Insets;
 import javafx.scene.Parent;
 import javafx.scene.control.Label;
@@ -12,33 +10,33 @@ import javafx.scene.layout.HBox;
 import javafx.util.Duration;
 
 public class Countdown extends Parent {
-    private IntegerProperty minutes, seconds;
+    private MyIntegerProperties minutes, seconds;
     private Timeline secondsTimeline;
 
     public Countdown(int duration) {
         // Properties
-        this.minutes = new SimpleIntegerProperty(duration - 1);
-        this.seconds = new SimpleIntegerProperty(59);
+        this.minutes = new MyIntegerProperties(duration - 1);
+        this.seconds = new MyIntegerProperties(59);
 
         // Labels
         Label minutesLabel = new MyLabel();
-        minutesLabel.textProperty().bind(minutes.asString());
+        minutesLabel.textProperty().bind(minutes.getStringProperty());
 
         Label doublePoints = new MyLabel(":");
 
         Label secondsLabel = new MyLabel();
-        secondsLabel.textProperty().bind(seconds.asString());
+        secondsLabel.textProperty().bind(seconds.getStringProperty());
 
         // KeyFrame
         KeyFrame secondsKeyFrame = new KeyFrame(Duration.seconds(59),
                 "Secondes",
                 onFinished -> {
-                    if (this.minutes.isEqualTo(0).get()) {
+                    if (this.minutes.isZero()) {
                         System.out.println("Too late..");
                         System.exit(0);
                     } else {
-                        this.minutes.setValue(this.minutes.get() - 1);
-                        this.seconds.setValue(60);
+                        this.minutes.decrease();
+                        this.seconds.setValue(59);
                         this.secondsTimeline.playFromStart();
                     }
                 },

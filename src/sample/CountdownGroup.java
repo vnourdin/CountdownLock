@@ -20,7 +20,7 @@ public class CountdownGroup extends Group {
 
 
         // CountDown
-        Countdown countdown = new Countdown(20);
+        Countdown countdown = new Countdown(3);
         layout.add(countdown, 1, 1);
 
         // Button
