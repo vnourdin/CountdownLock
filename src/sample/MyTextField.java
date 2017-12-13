@@ -13,6 +13,6 @@ public class MyTextField extends TextField {
     }
 
     public boolean isWellFilled() {
-        return (this.getText().equals(this.passphrase));
+        return (this.getText().trim().equals(this.passphrase));
     }
 }
