@@ -4,8 +4,8 @@ import javafx.scene.control.Button;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 
-public class StartCountdownButton extends Button {
-    public StartCountdownButton(CountdownGroup countdownGroup) {
+public class MyStartCountdownButton extends Button {
+    public MyStartCountdownButton(CountdownGroup countdownGroup) {
         super();
         this.setText("Démarrer");
         this.setTextFill(Color.DARKRED);

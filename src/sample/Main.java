@@ -13,7 +13,7 @@ public class Main extends Application {
 
         String[] words = {"Miam", "Test", "autre", "encore"};
         CountdownGroup countdownGroup = new CountdownGroup(words);
-        Scene scene = new Scene(countdownGroup, 700, 800);
+        Scene scene = new Scene(countdownGroup);
 
         primaryStage.setScene(scene);
         primaryStage.setFullScreen(true);
