@@ -32,6 +32,7 @@ public class GlobalBox extends VBox {
             this.fieldsGrid.add(new MyTextField(this.words[wordsIndice]), column, row);
         }
         this.fieldsGrid.setVisible(false);
+        this.fieldsGrid.setAlignment(Pos.CENTER);
         this.finishButton = new MyFinishButton(this);
 
         this.errorLabel = new Label("Erreur, réesayez!");
@@ -57,10 +58,14 @@ public class GlobalBox extends VBox {
             if (!((MyTextField) (this.fieldsGrid.getChildren().get(i))).isWellFilled())
                 everyFieldsWellFilled = false;
         }
-        if (everyFieldsWellFilled) {
-            this.getChildren().clear();
-            this.getChildren().add(new MyLabel("Bravo vous avez réussi!"));
-        } else
+        if (everyFieldsWellFilled)
+            victory();
+        else
             this.errorLabel.setVisible(true);
+    }
+
+    private void victory() {
+        this.getChildren().clear();
+        this.getChildren().add(new MyVictoryLabel());
     }
 }
