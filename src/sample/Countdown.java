@@ -8,6 +8,7 @@ import javafx.beans.property.SimpleIntegerProperty;
 import javafx.scene.Parent;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.layout.GridPane;
 import javafx.util.Duration;
 
 public class Countdown extends Parent {
@@ -55,7 +56,18 @@ public class Countdown extends Parent {
             button.setVisible(false);
         });
 
+        // Layout
+        GridPane layout = new GridPane();
+        // layout.setAlignment(Pos.CENTER);
+        layout.setGridLinesVisible(true);
+        layout.setHgap(50);
+
         // Add children
-        this.getChildren().addAll(minutesLabel, doublePoints, secondsLabel, button);
+        layout.add(minutesLabel, 0, 0);
+        layout.add(doublePoints, 1, 0);
+        layout.add(secondsLabel, 2, 0);
+        layout.add(button, 1, 1);
+
+        this.getChildren().add(layout);
     }
 }

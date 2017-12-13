@@ -10,7 +10,7 @@ public class Main extends Application {
     public void start(Stage primaryStage) throws Exception {
         primaryStage.setTitle("Compte à rebours");
 
-        // Group root = new Group(); // FXMLLoader.load(getClass().getResource("sample.fxml"));
+        // FXMLLoader.load(getClass().getResource("sample.fxml"));
         CountdownGroup countdownGroup = new CountdownGroup(null);
         Scene scene = new Scene(countdownGroup, 500, 500);
 
