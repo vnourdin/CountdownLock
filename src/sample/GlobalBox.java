@@ -20,12 +20,12 @@ public class CountdownGroup extends VBox {
         this.fieldsGrid = new GridPane();
         this.fieldsGrid.setAlignment(Pos.CENTER);
 
-        for (int i = 0, j = 0, k = 0; i < this.words.length; i++, k++) {
-            if (i % 2 == 0) {
-                j++;
-                k = 0;
+        for (int wordsIndice = 0, row = 0, column = 0; wordsIndice < this.words.length; wordsIndice++, column++) {
+            if (wordsIndice % 2 == 0) {
+                row++;
+                column = 0;
             }
-            this.fieldsGrid.add(new MyTextField(this.words[i]), k, j);
+            this.fieldsGrid.add(new MyTextField(this.words[wordsIndice]), column, row);
         }
         this.fieldsGrid.setVisible(false);
         this.getChildren().addAll(this.countdown, button, this.fieldsGrid);
