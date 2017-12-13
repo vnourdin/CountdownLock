@@ -5,15 +5,15 @@ import javafx.animation.KeyValue;
 import javafx.animation.Timeline;
 import javafx.beans.property.IntegerProperty;
 import javafx.beans.property.SimpleIntegerProperty;
-import javafx.geometry.Pos;
+import javafx.scene.Parent;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
 import javafx.util.Duration;
 
-public class Countdown extends VBox {
+public class Countdown extends Parent {
     private IntegerProperty minutes, seconds;
-    private Timeline minutesTimeline;
+    private Timeline secondsTimeline;
 
     public Countdown(int duration) {
         Label minutesLabel = new Label();
@@ -30,11 +30,6 @@ public class Countdown extends VBox {
         configLabel(secondsLabel);
         configLabel(doublePoints);
 
-//        Button button = new Button();
-//        button.setText("Start Timer");
-//        button.setOnAction(event -> {
-//        });
-
         KeyFrame secondsKeyFrame = new KeyFrame(Duration.seconds(60),
                 "Secondes",
                 onFinished -> {
@@ -44,18 +39,22 @@ public class Countdown extends VBox {
                     } else {
                         this.minutes.setValue(this.minutes.get() - 1);
                         this.seconds.setValue(60);
-                        this.minutesTimeline.playFromStart();
+                        this.secondsTimeline.playFromStart();
                     }
                 },
                 new KeyValue(this.seconds, 0));
 
-        this.minutesTimeline = new Timeline();
-        this.minutesTimeline.getKeyFrames().add(secondsKeyFrame);
-        this.minutesTimeline.playFromStart();
+        this.secondsTimeline = new Timeline();
+        this.secondsTimeline.getKeyFrames().add(secondsKeyFrame);
 
-        this.getChildren().addAll(minutesLabel, doublePoints, secondsLabel);
-        this.setBorder(new Border(new BorderStroke(Color.DARKBLUE, BorderStrokeStyle.SOLID, new CornerRadii(5), BorderStroke.THIN)));
-        this.setAlignment(Pos.CENTER);
+        Button button = new Button();
+        button.setText("Démarrer");
+        button.setOnAction(event -> {
+            this.secondsTimeline.playFromStart();
+            button.setVisible(false);
+        });
+
+        this.getChildren().addAll(minutesLabel, doublePoints, secondsLabel, button);
     }
 
     private void configLabel(Label toConfig) {
