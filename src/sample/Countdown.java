@@ -7,43 +7,59 @@ import javafx.beans.property.IntegerProperty;
 import javafx.beans.property.SimpleIntegerProperty;
 import javafx.geometry.Pos;
 import javafx.scene.control.Label;
-import javafx.scene.layout.VBox;
+import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
 import javafx.util.Duration;
 
 public class Countdown extends VBox {
-    private IntegerProperty timeSeconds;
-    private int STARTTIME = 20;
-    private Timeline timeline;
+    private IntegerProperty minutes, seconds;
+    private Timeline minutesTimeline;
 
-    public Countdown() {
-        Label timerLabel = new Label();
-        this.timeSeconds = new SimpleIntegerProperty(STARTTIME);
+    public Countdown(int duration) {
+        Label minutesLabel = new Label();
+        Label doublePoints = new Label(":");
+        Label secondsLabel = new Label();
 
-        timerLabel.textProperty().bind(timeSeconds.asString());
-        timerLabel.setTextFill(Color.RED);
-        timerLabel.setStyle("-fx-font-size: 5em;");
+        this.minutes = new SimpleIntegerProperty(duration - 1);
+        this.seconds = new SimpleIntegerProperty(60);
+
+        minutesLabel.textProperty().bind(minutes.asString());
+        secondsLabel.textProperty().bind(seconds.asString());
+
+        configLabel(minutesLabel);
+        configLabel(secondsLabel);
+        configLabel(doublePoints);
 
 //        Button button = new Button();
 //        button.setText("Start Timer");
 //        button.setOnAction(event -> {
-//            if (timeline != null) {
-//                timeline.stop();
-//            }
-//            timeSeconds.set(STARTTIME);
-//            timeline = new Timeline();
-//            timeline.getKeyFrames().add(
-//                    new KeyFrame(Duration.seconds(STARTTIME + 1),
-//                            new KeyValue(timeSeconds, 0)));
-//            timeline.playFromStart();
 //        });
-        this.timeline = new Timeline();
-        this.timeline.getKeyFrames().add(
-                new KeyFrame(Duration.seconds(STARTTIME + 1),
-                        new KeyValue(this.timeSeconds, 0)));
-        this.timeline.playFromStart();
 
-        this.getChildren().addAll(timerLabel);
+        KeyFrame secondsKeyFrame = new KeyFrame(Duration.seconds(60),
+                "Secondes",
+                onFinished -> {
+                    if (this.minutes.isEqualTo(0).get()) {
+                        System.out.println("Too late..");
+                        System.exit(0);
+                    } else {
+                        this.minutes.setValue(this.minutes.get() - 1);
+                        this.seconds.setValue(60);
+                        this.minutesTimeline.playFromStart();
+                    }
+                },
+                new KeyValue(this.seconds, 0));
+
+        this.minutesTimeline = new Timeline();
+        this.minutesTimeline.getKeyFrames().add(secondsKeyFrame);
+        this.minutesTimeline.playFromStart();
+
+        this.getChildren().addAll(minutesLabel, doublePoints, secondsLabel);
+        this.setBorder(new Border(new BorderStroke(Color.DARKBLUE, BorderStrokeStyle.SOLID, new CornerRadii(5), BorderStroke.THIN)));
         this.setAlignment(Pos.CENTER);
+    }
+
+    private void configLabel(Label toConfig) {
+        toConfig.setTextFill(Color.DARKCYAN);
+        toConfig.setStyle("-fx-font-size: 5em");
     }
 }

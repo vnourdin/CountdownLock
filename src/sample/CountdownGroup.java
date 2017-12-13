@@ -20,7 +20,7 @@ public class CountdownGroup extends Group {
         // TextField part
         //  for (word : this.words) // create a textField for this word // add it to children
 
-        Countdown countdown = new Countdown();
+        Countdown countdown = new Countdown(3);
 
         this.getChildren().addAll(countdown);
     }
