@@ -7,7 +7,7 @@ import javafx.beans.property.IntegerProperty;
 import javafx.beans.property.SimpleIntegerProperty;
 import javafx.scene.Parent;
 import javafx.scene.control.Label;
-import javafx.scene.layout.GridPane;
+import javafx.scene.layout.HBox;
 import javafx.util.Duration;
 
 public class Countdown extends Parent {
@@ -48,15 +48,14 @@ public class Countdown extends Parent {
         this.secondsTimeline.getKeyFrames().add(secondsKeyFrame);
 
         // Layout
-        GridPane layout = new GridPane();
+        HBox layout = new HBox();
         // layout.setAlignment(Pos.CENTER);
-        layout.setGridLinesVisible(true);
-        layout.setHgap(50);
+        layout.setSpacing(20);
 
         // Add children
-        layout.add(minutesLabel, 0, 0);
-        layout.add(doublePoints, 1, 0);
-        layout.add(secondsLabel, 2, 0);
+        layout.getChildren().add(minutesLabel);
+        layout.getChildren().add(doublePoints);
+        layout.getChildren().add(secondsLabel);
 
         this.getChildren().add(layout);
     }
