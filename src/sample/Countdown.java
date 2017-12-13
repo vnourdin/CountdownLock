@@ -5,6 +5,7 @@ import javafx.animation.KeyValue;
 import javafx.animation.Timeline;
 import javafx.beans.property.IntegerProperty;
 import javafx.beans.property.SimpleIntegerProperty;
+import javafx.geometry.Insets;
 import javafx.scene.Parent;
 import javafx.scene.control.Label;
 import javafx.scene.layout.HBox;
@@ -17,7 +18,7 @@ public class Countdown extends Parent {
     public Countdown(int duration) {
         // Properties
         this.minutes = new SimpleIntegerProperty(duration - 1);
-        this.seconds = new SimpleIntegerProperty(60);
+        this.seconds = new SimpleIntegerProperty(59);
 
         // Labels
         Label minutesLabel = new MyLabel();
@@ -29,7 +30,7 @@ public class Countdown extends Parent {
         secondsLabel.textProperty().bind(seconds.asString());
 
         // KeyFrame
-        KeyFrame secondsKeyFrame = new KeyFrame(Duration.seconds(60),
+        KeyFrame secondsKeyFrame = new KeyFrame(Duration.seconds(59),
                 "Secondes",
                 onFinished -> {
                     if (this.minutes.isEqualTo(0).get()) {
@@ -48,20 +49,12 @@ public class Countdown extends Parent {
         this.secondsTimeline.getKeyFrames().add(secondsKeyFrame);
 
         // Layout
-        HBox layout = new HBox();
-        // layout.setAlignment(Pos.CENTER);
-        layout.setSpacing(20);
-
-        // Add children
-        layout.getChildren().add(minutesLabel);
-        layout.getChildren().add(doublePoints);
-        layout.getChildren().add(secondsLabel);
-
+        HBox layout = new HBox(20, minutesLabel, doublePoints, secondsLabel);
         this.getChildren().add(layout);
 
         // Background
         layout.setBackground(CountdownBackground.get());
-        layout.setFillHeight(false);
+        layout.setPadding(new Insets(75, 75, 75, 75));
     }
 
     public void start() {

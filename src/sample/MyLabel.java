@@ -2,6 +2,7 @@ package sample;
 
 import javafx.scene.control.Label;
 import javafx.scene.paint.Color;
+import javafx.scene.text.TextAlignment;
 
 public class MyLabel extends Label {
 
@@ -18,5 +19,6 @@ public class MyLabel extends Label {
     private void config() {
         this.setTextFill(Color.DARKCYAN);
         this.setStyle("-fx-font-size: 5em");
+        this.setTextAlignment(TextAlignment.CENTER);
     }
 }

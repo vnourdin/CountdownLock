@@ -18,8 +18,9 @@ public class CountdownGroup extends Group {
         this.getChildren().add(layout);
         layout.setGridLinesVisible(true);
 
+
         // CountDown
-        Countdown countdown = new Countdown(3);
+        Countdown countdown = new Countdown(20);
         layout.add(countdown, 1, 1);
 
         // Button
