@@ -58,6 +58,10 @@ public class Countdown extends Parent {
         layout.getChildren().add(secondsLabel);
 
         this.getChildren().add(layout);
+
+        // Background
+        layout.setBackground(CountdownBackground.get());
+        layout.setFillHeight(false);
     }
 
     public void start() {
