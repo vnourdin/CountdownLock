@@ -57,7 +57,7 @@ public class GlobalBox extends VBox {
         if (everyFieldsWellFilled)
             victory();
         else
-            this.errorLabel.setVisible(true);
+            this.errorLabel.activate();
     }
 
     private void victory() {
