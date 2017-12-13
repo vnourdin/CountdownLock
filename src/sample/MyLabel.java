@@ -11,13 +11,14 @@ public class MyLabel extends Label {
         this.config();
     }
 
-    public MyLabel() {
+    public MyLabel(MyIntegerProperties property) {
         super();
         this.config();
+        this.textProperty().bind(property.getStringProperty());
     }
 
     private void config() {
-        this.setTextFill(Color.DARKCYAN);
+        this.setTextFill(Color.DARKRED);
         this.setStyle("-fx-font-size: 5em");
         this.setTextAlignment(TextAlignment.CENTER);
     }

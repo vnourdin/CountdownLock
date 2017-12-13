@@ -16,8 +16,6 @@ public class CountdownGroup extends Group {
         // Layout
         GridPane layout = new GridPane();
         this.getChildren().add(layout);
-        layout.setGridLinesVisible(true);
-
 
         // CountDown
         Countdown countdown = new Countdown(3);

@@ -10,37 +10,32 @@ import javafx.scene.layout.HBox;
 import javafx.util.Duration;
 
 public class Countdown extends Parent {
-    private MyIntegerProperties minutes, seconds;
     private Timeline secondsTimeline;
 
     public Countdown(int duration) {
         // Properties
-        this.minutes = new MyIntegerProperties(duration - 1);
-        this.seconds = new MyIntegerProperties(59);
+        MyIntegerProperties minutes = new MyIntegerProperties(duration - 1);
+        MyIntegerProperties seconds = new MyIntegerProperties(59);
 
         // Labels
-        Label minutesLabel = new MyLabel();
-        minutesLabel.textProperty().bind(minutes.getStringProperty());
-
+        Label minutesLabel = new MyLabel(minutes);
         Label doublePoints = new MyLabel(":");
-
-        Label secondsLabel = new MyLabel();
-        secondsLabel.textProperty().bind(seconds.getStringProperty());
+        Label secondsLabel = new MyLabel(seconds);
 
         // KeyFrame
         KeyFrame secondsKeyFrame = new KeyFrame(Duration.seconds(59),
                 "Secondes",
                 onFinished -> {
-                    if (this.minutes.isZero()) {
+                    if (minutes.isZero()) {
                         System.out.println("Too late..");
                         System.exit(0);
                     } else {
-                        this.minutes.decrease();
-                        this.seconds.setValue(59);
+                        minutes.decrease();
+                        seconds.setValue(59);
                         this.secondsTimeline.playFromStart();
                     }
                 },
-                new KeyValue(this.seconds, 0));
+                new KeyValue(seconds, 0));
 
         // TimeLine
         this.secondsTimeline = new Timeline();
