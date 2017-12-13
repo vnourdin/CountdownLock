@@ -1,28 +1,21 @@
 package sample;
 
-import javafx.scene.Group;
-import javafx.scene.layout.GridPane;
+import javafx.geometry.Pos;
+import javafx.scene.layout.VBox;
 
-public class CountdownGroup extends Group {
+public class CountdownGroup extends VBox {
 
     private int[] words;
 
     public CountdownGroup(int[] words) {
+        super(20);
         this.words = words;
-        this.init();
-    }
+        this.setAlignment(Pos.CENTER);
 
-    private void init() {
-        // Layout
-        GridPane layout = new GridPane();
-        this.getChildren().add(layout);
-
-        // CountDown
         Countdown countdown = new Countdown(3);
-        layout.add(countdown, 1, 1);
+        MyButton button = new MyButton(countdown);
 
-        // Button
-        layout.add(new MyButton(countdown), 1, 2);
+        this.getChildren().addAll(countdown, button);
 
         // TextField part
         //  for (word : this.words) // create a textField for this word // add it to children

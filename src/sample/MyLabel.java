@@ -19,7 +19,7 @@ public class MyLabel extends Label {
 
     private void config() {
         this.setTextFill(Color.DARKRED);
-        this.setStyle("-fx-font-size: 5em");
+        this.setStyle("-fx-font-size: 10em");
         this.setTextAlignment(TextAlignment.CENTER);
     }
 }
