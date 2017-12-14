@@ -64,4 +64,9 @@ public class GlobalBox extends VBox {
         this.getChildren().clear();
         this.getChildren().add(new MyVictoryLabel());
     }
+
+    public void defeat() {
+        this.getChildren().clear();
+        this.getChildren().add(new MyDefeatLabel());
+    }
 }

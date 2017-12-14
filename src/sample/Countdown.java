@@ -31,8 +31,7 @@ public class Countdown extends Parent {
                 "Secondes",
                 onFinished -> {
                     if (minutes.isZero()) {
-                        System.out.println("Too late..");
-                        System.exit(0);
+                        ((GlobalBox) this.getParent()).defeat();
                     } else {
                         minutes.decrease();
                         seconds.setValue(59);
