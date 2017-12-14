@@ -1,6 +1,6 @@
 package CountdownLock;
 
-import CountdownLock.Layouts.GameBox;
+import CountdownLock.Layouts.ConfigPane;
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.scene.input.KeyCombination;
@@ -16,9 +16,7 @@ public class Main extends Application {
     public void start(Stage primaryStage) {
         primaryStage.setTitle("Compte à rebours");
 
-        String[] words = {"This", "is", "a", "test"};
-        GameBox gameBox = new GameBox(words, 5, true);
-        Scene scene = new Scene(gameBox);
+        Scene scene = new Scene(new ConfigPane());
 
         primaryStage.setScene(scene);
         primaryStage.setFullScreen(true);
