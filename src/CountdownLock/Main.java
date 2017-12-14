@@ -17,6 +17,7 @@ public class Main extends Application {
         primaryStage.setTitle("Compte à rebours");
 
         Scene scene = new Scene(new ConfigPane());
+        scene.getStylesheets().add("CountdownLock/MyCheckBox.css");
 
         primaryStage.setScene(scene);
         primaryStage.setFullScreen(true);
