@@ -39,14 +39,28 @@ public class GlobalBox extends VBox {
         }
     }
 
-    public void startCountdown() {
+    private void victory() {
+        this.getChildren().clear();
+        this.getChildren().add(new MyVictoryLabel());
+    }
+
+    public void defeat() {
+        this.getChildren().clear();
+        this.getChildren().add(new MyDefeatLabel());
+    }
+
+    public void start() {
         this.showFields();
-        this.countdown.start();
+        this.startCountdown();
     }
 
     private void showFields() {
         this.fieldsGrid.setVisible(true);
         this.finishButton.setVisible(true);
+    }
+
+    private void startCountdown() {
+        this.countdown.start();
     }
 
     public void checkWords() {
@@ -59,15 +73,5 @@ public class GlobalBox extends VBox {
             victory();
         else
             this.errorLabel.activate();
-    }
-
-    private void victory() {
-        this.getChildren().clear();
-        this.getChildren().add(new MyVictoryLabel());
-    }
-
-    public void defeat() {
-        this.getChildren().clear();
-        this.getChildren().add(new MyDefeatLabel());
     }
 }
