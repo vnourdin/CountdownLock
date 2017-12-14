@@ -36,14 +36,6 @@ public class GameBox extends MyVBox {
         }
     }
 
-    private void victory() {
-        this.getScene().setRoot(new VictoryBox());
-    }
-
-    public void defeat() {
-        this.getScene().setRoot(new DefeatBox());
-    }
-
     public void start() {
         this.showFields();
         this.startCountdown();
@@ -68,5 +60,15 @@ public class GameBox extends MyVBox {
             victory();
         else
             this.errorLabel.activate();
+    }
+
+    private void victory() {
+        this.getScene().setRoot(new VictoryBox());
+        this.getChildren().clear();
+    }
+
+    public void defeat() {
+        this.getScene().setRoot(new DefeatBox());
+        this.getChildren().clear();
     }
 }
