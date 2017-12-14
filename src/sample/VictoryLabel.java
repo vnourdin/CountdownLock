@@ -2,8 +2,8 @@ package sample;
 
 import javafx.scene.paint.Color;
 
-public class MyVictoryLabel extends MyLabel {
-    public MyVictoryLabel() {
+public class VictoryLabel extends MyLabel {
+    public VictoryLabel() {
         super("Bravo\nvous avez\ngagné!");
         this.setTextFill(Color.FORESTGREEN);
     }

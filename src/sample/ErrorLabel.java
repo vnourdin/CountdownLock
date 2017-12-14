@@ -6,12 +6,12 @@ import javafx.scene.control.Label;
 import javafx.scene.paint.Color;
 import javafx.util.Duration;
 
-public class MyErrorLabel extends Label {
+public class ErrorLabel extends Label {
 
     private Timeline timeline;
     private int timer;
 
-    public MyErrorLabel() {
+    public ErrorLabel() {
         super("Erreur, réesayez!");
         this.setTextFill(Color.RED);
         this.setStyle("-fx-font-size: 2em");

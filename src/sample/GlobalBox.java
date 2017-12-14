@@ -8,8 +8,8 @@ public class GlobalBox extends VBox {
 
     private Countdown countdown;
     private GridPane fieldsGrid;
-    private MyFinishButton finishButton;
-    private MyErrorLabel errorLabel;
+    private FinishButton finishButton;
+    private ErrorLabel errorLabel;
 
     public GlobalBox(String[] words) {
         super(20);
@@ -17,14 +17,14 @@ public class GlobalBox extends VBox {
 
         this.countdown = new Countdown(20);
 
-        MyStartCountdownButton startButton = new MyStartCountdownButton();
+        StartCountdownButton startButton = new StartCountdownButton();
 
-        this.fieldsGrid = new MyFieldsGrid();
+        this.fieldsGrid = new FieldsGrid();
         fullfillFields(words);
 
-        this.finishButton = new MyFinishButton();
+        this.finishButton = new FinishButton();
 
-        this.errorLabel = new MyErrorLabel();
+        this.errorLabel = new ErrorLabel();
 
         this.getChildren().addAll(this.countdown, startButton, this.fieldsGrid, this.finishButton, this.errorLabel);
     }
@@ -41,12 +41,12 @@ public class GlobalBox extends VBox {
 
     private void victory() {
         this.getChildren().clear();
-        this.getChildren().add(new MyVictoryLabel());
+        this.getChildren().add(new VictoryLabel());
     }
 
     public void defeat() {
         this.getChildren().clear();
-        this.getChildren().add(new MyDefeatLabel());
+        this.getChildren().add(new DefeatLabel());
     }
 
     public void start() {

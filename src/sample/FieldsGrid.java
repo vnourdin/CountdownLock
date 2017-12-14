@@ -4,9 +4,9 @@ import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.layout.GridPane;
 
-public class MyFieldsGrid extends GridPane {
+public class FieldsGrid extends GridPane {
 
-    public MyFieldsGrid() {
+    public FieldsGrid() {
         super();
         this.setAlignment(Pos.CENTER);
         this.setVgap(20);

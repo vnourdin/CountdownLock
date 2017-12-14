@@ -7,6 +7,10 @@ import javafx.stage.Stage;
 
 public class Main extends Application {
 
+    public static void main(String[] args) {
+        launch(args);
+    }
+
     @Override
     public void start(Stage primaryStage) {
         primaryStage.setTitle("Compte à rebours");
@@ -19,10 +23,5 @@ public class Main extends Application {
         primaryStage.setFullScreen(true);
         primaryStage.setFullScreenExitKeyCombination(KeyCombination.NO_MATCH);
         primaryStage.show();
-    }
-
-
-    public static void main(String[] args) {
-        launch(args);
     }
 }

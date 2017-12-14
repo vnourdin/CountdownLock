@@ -4,8 +4,8 @@ import javafx.scene.control.Button;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 
-public class MyFinishButton extends Button {
-    public MyFinishButton() {
+public class FinishButton extends Button {
+    public FinishButton() {
         super();
         this.setText("Valider");
         this.setTextFill(Color.DARKRED);
