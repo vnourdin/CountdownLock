@@ -15,7 +15,6 @@ public class Countdown extends Parent {
 
     public Countdown(int duration) {
         super();
-        this.setCursor(Cursor.WAIT);
 
         // Properties
         MyIntegerProperties minutes = new MyIntegerProperties(duration - 1);
@@ -54,6 +53,7 @@ public class Countdown extends Parent {
     }
 
     public void start() {
+        this.setCursor(Cursor.WAIT);
         this.secondsTimeline.playFromStart();
     }
 }
