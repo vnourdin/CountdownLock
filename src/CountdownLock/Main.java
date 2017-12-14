@@ -16,7 +16,7 @@ public class Main extends Application {
         primaryStage.setTitle("Compte à rebours");
 
         String[] words = {"This", "is", "a", "test"};
-        GameBox gameBox = new GameBox(words);
+        GameBox gameBox = new GameBox(words, 5, true);
         Scene scene = new Scene(gameBox);
 
         primaryStage.setScene(scene);

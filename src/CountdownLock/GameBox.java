@@ -9,15 +9,15 @@ public class GameBox extends MyVBox {
     private FinishButton finishButton;
     private ErrorLabel errorLabel;
 
-    public GameBox(String[] words) {
+    public GameBox(String[] words, int minutes, boolean help) {
         super();
 
-        this.countdown = new Countdown(20);
+        this.countdown = new Countdown(minutes);
 
         StartCountdownButton startButton = new StartCountdownButton();
 
         this.fieldsGrid = new FieldsGrid();
-        fullfillFields(words);
+        fullfillFields(words, help);
 
         this.finishButton = new FinishButton();
 
@@ -26,13 +26,13 @@ public class GameBox extends MyVBox {
         this.getChildren().addAll(this.countdown, startButton, this.fieldsGrid, this.finishButton, this.errorLabel);
     }
 
-    private void fullfillFields(String[] words) {
+    private void fullfillFields(String[] words, boolean help) {
         for (int wordsIndice = 0, row = 0, column = 0; wordsIndice < words.length; wordsIndice++, column++) {
             if (wordsIndice % 2 == 0) {
                 row++;
                 column = 0;
             }
-            this.fieldsGrid.add(new MyTextField(words[wordsIndice]), column, row);
+            this.fieldsGrid.add(new MyTextField(words[wordsIndice], help), column, row);
         }
     }
 

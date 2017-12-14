@@ -10,12 +10,14 @@ public class MyTextField extends TextField {
     private Background correctBack = BackgroundFactory.getBasic(Color.LIGHTBLUE);
     private Background incorrectBack = BackgroundFactory.getBasic(Color.INDIANRED);
 
-    public MyTextField(String passphrase) {
+    public MyTextField(String passphrase, boolean help) {
         super();
         this.passphrase = passphrase;
         this.setFont(new Font(40));
-        this.setBackground(this.incorrectBack);
-        this.setOnKeyReleased(e -> this.actualizeBack());
+        if (help) {
+            this.setBackground(this.incorrectBack);
+            this.setOnKeyReleased(e -> this.actualizeBack());
+        }
     }
 
     private void actualizeBack() {
