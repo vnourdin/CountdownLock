@@ -1,6 +1,5 @@
 package CountdownLock.Config;
 
-import CountdownLock.Generic.MyTextField;
 import CountdownLock.Generic.MyVBox;
 
 public class ConfigPane extends MyVBox {
@@ -9,13 +8,8 @@ public class ConfigPane extends MyVBox {
         super();
 
         TitleLine titleLine = new TitleLine("Configuration");
+        WordsConfigLine configWords = new WordsConfigLine();
 
-        ConfigLine firstLine = new ConfigLine();
-        ConfigLabel wordsLabel = new ConfigLabel("Mots à trouver:");
-        MyTextField wordsInput = new MyTextField();
-
-        firstLine.getChildren().addAll(wordsLabel, wordsInput);
-
-        this.getChildren().addAll(titleLine, firstLine);
+        this.getChildren().addAll(titleLine, configWords);
     }
 }
