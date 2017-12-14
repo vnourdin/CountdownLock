@@ -6,7 +6,7 @@ import CountdownLock.Generic.MyVBox;
 public class ConfigPane extends MyVBox {
 
     public ConfigPane() {
-        super();
+        super(60);
 
         TitleLine titleLine = new TitleLine("Configuration");
         WordsConfigLine configWords = new WordsConfigLine();

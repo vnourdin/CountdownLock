@@ -5,8 +5,12 @@ import javafx.scene.layout.VBox;
 
 public abstract class MyVBox extends VBox {
 
-    protected MyVBox() {
-        super(20);
+    protected MyVBox(int spacing) {
+        super(spacing);
         this.setAlignment(Pos.CENTER);
+    }
+
+    protected MyVBox() {
+        this(20);
     }
 }
