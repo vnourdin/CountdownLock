@@ -25,6 +25,10 @@ public class MyIntegerProperties extends SimpleIntegerProperty {
         return this.get() == 0;
     }
 
+    public boolean isCritical() {
+        return this.get() <= 5;
+    }
+
     public void decrease() {
         this.setValue(this.get() - 1);
     }

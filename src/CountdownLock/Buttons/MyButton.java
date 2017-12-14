@@ -7,8 +7,8 @@ import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 
 public class MyButton extends Button {
-    private Background normalBack = BackgroundFactory.getBasic(Color.LIGHTGRAY);
-    private Background hoverBack = BackgroundFactory.getBasic(Color.LIGHTBLUE);
+    private Background normalBack = BackgroundFactory.get(Color.LIGHTGRAY);
+    private Background hoverBack = BackgroundFactory.get(Color.LIGHTBLUE);
 
     public MyButton(String text) {
         super(text);

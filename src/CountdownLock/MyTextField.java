@@ -7,8 +7,8 @@ import javafx.scene.text.Font;
 
 public class MyTextField extends TextField {
     private String passphrase;
-    private Background correctBack = BackgroundFactory.getBasic(Color.LIGHTBLUE);
-    private Background incorrectBack = BackgroundFactory.getBasic(Color.INDIANRED);
+    private Background correctBack = BackgroundFactory.get(Color.LIGHTBLUE);
+    private Background incorrectBack = BackgroundFactory.get(Color.INDIANRED);
 
     public MyTextField(String passphrase, boolean help) {
         super();
