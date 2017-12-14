@@ -1,5 +1,6 @@
 package CountdownLock;
 
+import CountdownLock.Boxes.GameBox;
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.scene.input.KeyCombination;

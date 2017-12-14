@@ -1,4 +1,4 @@
-package CountdownLock;
+package CountdownLock.Labels;
 
 import javafx.scene.paint.Color;
 

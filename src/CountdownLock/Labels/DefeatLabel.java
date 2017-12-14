@@ -1,4 +1,4 @@
-package CountdownLock;
+package CountdownLock.Labels;
 
 public class DefeatLabel extends MyLabel {
     public DefeatLabel() {

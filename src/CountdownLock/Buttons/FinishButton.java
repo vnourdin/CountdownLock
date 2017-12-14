@@ -1,4 +1,6 @@
-package CountdownLock;
+package CountdownLock.Buttons;
+
+import CountdownLock.Boxes.GameBox;
 
 public class FinishButton extends MyButton {
     public FinishButton() {

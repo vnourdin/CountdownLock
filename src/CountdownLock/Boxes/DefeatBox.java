@@ -1,4 +1,6 @@
-package CountdownLock;
+package CountdownLock.Boxes;
+
+import CountdownLock.Labels.DefeatLabel;
 
 public class DefeatBox extends MyVBox {
 
