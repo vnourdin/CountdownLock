@@ -12,7 +12,6 @@ public class MyStartCountdownButton extends Button {
         this.setFont(new Font(25));
         this.setOnAction(event -> {
             ((GlobalBox) this.getParent()).startCountdown();
-            ((GlobalBox) this.getParent()).showFields();
             this.setVisible(false);
         });
     }

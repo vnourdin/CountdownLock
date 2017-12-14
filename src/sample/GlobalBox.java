@@ -40,10 +40,11 @@ public class GlobalBox extends VBox {
     }
 
     public void startCountdown() {
+        this.showFields();
         this.countdown.start();
     }
 
-    public void showFields() {
+    private void showFields() {
         this.fieldsGrid.setVisible(true);
         this.finishButton.setVisible(true);
     }
