@@ -4,7 +4,7 @@ public class FinishButton extends MyButton {
     public FinishButton() {
         super("Valider");
         this.setOnAction(event -> {
-            ((GlobalBox) this.getParent()).checkWords();
+            ((GameBox) this.getParent()).checkWords();
         });
         this.setVisible(false);
     }

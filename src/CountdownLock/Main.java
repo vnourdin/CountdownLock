@@ -16,8 +16,8 @@ public class Main extends Application {
         primaryStage.setTitle("Compte à rebours");
 
         String[] words = {"This", "is", "a", "test"};
-        GlobalBox globalBox = new GlobalBox(words);
-        Scene scene = new Scene(globalBox);
+        GameBox gameBox = new GameBox(words);
+        Scene scene = new Scene(gameBox);
 
         primaryStage.setScene(scene);
         primaryStage.setFullScreen(true);

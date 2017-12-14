@@ -4,14 +4,14 @@ import javafx.geometry.Pos;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.VBox;
 
-public class GlobalBox extends VBox {
+public class GameBox extends VBox {
 
     private Countdown countdown;
     private GridPane fieldsGrid;
     private FinishButton finishButton;
     private ErrorLabel errorLabel;
 
-    public GlobalBox(String[] words) {
+    public GameBox(String[] words) {
         super(20);
         this.setAlignment(Pos.CENTER);
 

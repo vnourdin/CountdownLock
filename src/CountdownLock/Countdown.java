@@ -30,7 +30,7 @@ public class Countdown extends Parent {
                 "Secondes",
                 onFinished -> {
                     if (minutes.isZero()) {
-                        ((GlobalBox) this.getParent()).defeat();
+                        ((GameBox) this.getParent()).defeat();
                     } else {
                         minutes.decrease();
                         seconds.setValue(59);
