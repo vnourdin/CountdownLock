@@ -49,7 +49,7 @@ public class Countdown extends Parent {
         this.getChildren().add(layout);
 
         // Background
-        layout.setBackground(BackgroundFactory.get());
+        layout.setBackground(BackgroundFactory.getCountdown());
         layout.setPadding(new Insets(75, 75, 75, 75));
     }
 

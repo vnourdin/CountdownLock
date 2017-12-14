@@ -1,12 +1,13 @@
 package sample;
 
-import javafx.geometry.Insets;
 import javafx.scene.control.Button;
 import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 
 public class MyButton extends Button {
+    private Background normalBack = BackgroundFactory.getBasic(Color.LIGHTGRAY);
+    private Background hoverBack = BackgroundFactory.getBasic(Color.LIGHTBLUE);
 
     public MyButton(String text) {
         super(text);
@@ -20,10 +21,10 @@ public class MyButton extends Button {
     }
 
     private void setNormalBackground() {
-        this.setBackground(new Background(new BackgroundFill(Color.LIGHTGRAY, CornerRadii.EMPTY, Insets.EMPTY)));
+        this.setBackground(this.normalBack);
     }
 
     private void setHoverBackground() {
-        this.setBackground(new Background(new BackgroundFill(Color.LIGHTBLUE, CornerRadii.EMPTY, Insets.EMPTY)));
+        this.setBackground(this.hoverBack);
     }
 }
