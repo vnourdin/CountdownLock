@@ -1,6 +1,6 @@
 package CountdownLock;
 
-import CountdownLock.Boxes.GameBox;
+import CountdownLock.Layouts.GameBox;
 import CountdownLock.Labels.MyLabel;
 import javafx.animation.KeyFrame;
 import javafx.animation.KeyValue;

@@ -1,4 +1,4 @@
-package CountdownLock;
+package CountdownLock.Layouts;
 
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;

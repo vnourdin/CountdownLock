@@ -1,6 +1,6 @@
 package CountdownLock.Buttons;
 
-import CountdownLock.Boxes.GameBox;
+import CountdownLock.Layouts.GameBox;
 
 public class StartCountdownButton extends MyButton {
     public StartCountdownButton() {

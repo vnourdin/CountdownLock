@@ -1,4 +1,4 @@
-package CountdownLock.Boxes;
+package CountdownLock.Layouts;
 
 import CountdownLock.Labels.DefeatLabel;
 

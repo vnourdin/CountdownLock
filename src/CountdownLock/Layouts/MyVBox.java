@@ -1,4 +1,4 @@
-package CountdownLock.Boxes;
+package CountdownLock.Layouts;
 
 import javafx.geometry.Pos;
 import javafx.scene.layout.VBox;
