@@ -1,10 +1,8 @@
 package CountdownLock;
 
-import javafx.geometry.Pos;
 import javafx.scene.layout.GridPane;
-import javafx.scene.layout.VBox;
 
-public class GameBox extends VBox {
+public class GameBox extends MyVBox {
 
     private Countdown countdown;
     private GridPane fieldsGrid;
@@ -12,8 +10,7 @@ public class GameBox extends VBox {
     private ErrorLabel errorLabel;
 
     public GameBox(String[] words) {
-        super(20);
-        this.setAlignment(Pos.CENTER);
+        super();
 
         this.countdown = new Countdown(20);
 
@@ -40,13 +37,11 @@ public class GameBox extends VBox {
     }
 
     private void victory() {
-        this.getChildren().clear();
-        this.getChildren().add(new VictoryLabel());
+        this.getScene().setRoot(new VictoryBox());
     }
 
     public void defeat() {
-        this.getChildren().clear();
-        this.getChildren().add(new DefeatLabel());
+        this.getScene().setRoot(new DefeatBox());
     }
 
     public void start() {
