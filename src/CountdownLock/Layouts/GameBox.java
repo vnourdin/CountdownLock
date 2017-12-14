@@ -2,7 +2,6 @@ package CountdownLock.Layouts;
 
 import CountdownLock.Buttons.FinishButton;
 import CountdownLock.Buttons.StartCountdownButton;
-import CountdownLock.Countdown;
 import CountdownLock.Labels.ErrorLabel;
 import CountdownLock.MyTextField;
 import javafx.scene.layout.GridPane;

@@ -1,7 +1,9 @@
-package CountdownLock;
+package CountdownLock.Layouts;
 
+import CountdownLock.BackgroundFactory;
 import CountdownLock.Labels.MyLabel;
 import CountdownLock.Layouts.GameBox;
+import CountdownLock.MyIntegerProperties;
 import javafx.animation.KeyFrame;
 import javafx.animation.KeyValue;
 import javafx.animation.Timeline;
