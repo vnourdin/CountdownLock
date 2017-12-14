@@ -1,4 +1,4 @@
-package CountdownLock;
+package CountdownLock.Generic;
 
 import javafx.geometry.Insets;
 import javafx.scene.layout.Background;

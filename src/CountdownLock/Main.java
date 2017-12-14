@@ -1,6 +1,6 @@
 package CountdownLock;
 
-import CountdownLock.Layouts.ConfigPane;
+import CountdownLock.Config.ConfigPane;
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.scene.input.KeyCombination;

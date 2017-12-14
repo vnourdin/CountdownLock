@@ -1,6 +1,5 @@
-package CountdownLock.Buttons;
+package CountdownLock.Generic;
 
-import CountdownLock.BackgroundFactory;
 import javafx.scene.control.Button;
 import javafx.scene.layout.*;
 import javafx.scene.paint.Color;

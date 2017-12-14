@@ -1,4 +1,4 @@
-package CountdownLock.TextFields;
+package CountdownLock.Generic;
 
 import javafx.scene.control.TextField;
 import javafx.scene.text.Font;

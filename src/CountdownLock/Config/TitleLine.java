@@ -1,6 +1,7 @@
-package CountdownLock.Layouts;
+package CountdownLock.Config;
 
-import CountdownLock.BackgroundFactory;
+import CountdownLock.Generic.BackgroundFactory;
+import CountdownLock.Generic.MyHBox;
 import javafx.geometry.Insets;
 import javafx.scene.paint.Color;
 

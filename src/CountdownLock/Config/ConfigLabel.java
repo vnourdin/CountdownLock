@@ -1,5 +1,6 @@
-package CountdownLock.Labels;
+package CountdownLock.Config;
 
+import CountdownLock.Generic.MyLabel;
 import javafx.scene.paint.Color;
 import javafx.scene.text.TextAlignment;
 

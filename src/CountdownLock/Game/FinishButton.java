@@ -1,6 +1,6 @@
-package CountdownLock.Buttons;
+package CountdownLock.Game;
 
-import CountdownLock.Layouts.GameBox;
+import CountdownLock.Generic.MyButton;
 
 public class FinishButton extends MyButton {
     public FinishButton() {

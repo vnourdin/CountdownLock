@@ -1,6 +1,6 @@
-package CountdownLock.Layouts;
+package CountdownLock.End;
 
-import CountdownLock.Labels.VictoryLabel;
+import CountdownLock.Generic.MyVBox;
 
 public class VictoryBox extends MyVBox {
 

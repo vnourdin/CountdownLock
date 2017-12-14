@@ -1,8 +1,8 @@
-package CountdownLock.Layouts;
+package CountdownLock.Config;
 
-import CountdownLock.Labels.ConfigLabel;
-import CountdownLock.Labels.Title;
-import CountdownLock.TextFields.MyTextField;
+import CountdownLock.Generic.MyTextField;
+import CountdownLock.Generic.MyVBox;
+import CountdownLock.Generic.Title;
 
 public class ConfigPane extends MyVBox {
 

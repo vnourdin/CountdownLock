@@ -1,10 +1,8 @@
-package CountdownLock.Layouts;
+package CountdownLock.Game;
 
-import CountdownLock.Buttons.FinishButton;
-import CountdownLock.Buttons.StartCountdownButton;
-import CountdownLock.Labels.ErrorLabel;
-import CountdownLock.TextFields.GameField;
-import CountdownLock.TextFields.MyTextField;
+import CountdownLock.End.DefeatBox;
+import CountdownLock.End.VictoryBox;
+import CountdownLock.Generic.MyVBox;
 import javafx.scene.layout.GridPane;
 
 public class GameBox extends MyVBox {

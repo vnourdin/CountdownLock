@@ -1,4 +1,6 @@
-package CountdownLock.Labels;
+package CountdownLock.End;
+
+import CountdownLock.Generic.MyLabel;
 
 public class DefeatLabel extends MyLabel {
     public DefeatLabel() {
