@@ -1,19 +1,17 @@
-package CountdownLock;
+package CountdownLock.TextFields;
 
-import javafx.scene.control.TextField;
+import CountdownLock.BackgroundFactory;
 import javafx.scene.layout.Background;
 import javafx.scene.paint.Color;
-import javafx.scene.text.Font;
 
-public class MyTextField extends TextField {
+public class GameField extends MyTextField {
     private String passphrase;
     private Background correctBack = BackgroundFactory.get(Color.LIGHTBLUE);
     private Background incorrectBack = BackgroundFactory.get(Color.INDIANRED);
 
-    public MyTextField(String passphrase, boolean help) {
+    public GameField(String passphrase, boolean help) {
         super();
         this.passphrase = passphrase;
-        this.setFont(new Font(40));
         if (help) {
             this.setBackground(this.incorrectBack);
             this.setOnKeyReleased(e -> this.actualizeBack());

@@ -3,7 +3,8 @@ package CountdownLock.Layouts;
 import CountdownLock.Buttons.FinishButton;
 import CountdownLock.Buttons.StartCountdownButton;
 import CountdownLock.Labels.ErrorLabel;
-import CountdownLock.MyTextField;
+import CountdownLock.TextFields.GameField;
+import CountdownLock.TextFields.MyTextField;
 import javafx.scene.layout.GridPane;
 
 public class GameBox extends MyVBox {
@@ -36,7 +37,7 @@ public class GameBox extends MyVBox {
                 row++;
                 column = 0;
             }
-            this.fieldsGrid.add(new MyTextField(words[wordsIndice], help), column, row);
+            this.fieldsGrid.add(new GameField(words[wordsIndice], help), column, row);
         }
     }
 
@@ -57,7 +58,7 @@ public class GameBox extends MyVBox {
     public void checkWords() {
         boolean everyFieldsWellFilled = true;
         for (int i = 0; i < this.fieldsGrid.getChildren().size(); i++) {
-            if (!((MyTextField) (this.fieldsGrid.getChildren().get(i))).isWellFilled())
+            if (!((GameField) (this.fieldsGrid.getChildren().get(i))).isWellFilled())
                 everyFieldsWellFilled = false;
         }
         if (everyFieldsWellFilled)
