@@ -1,15 +1,8 @@
 package sample;
 
-import javafx.scene.control.Button;
-import javafx.scene.paint.Color;
-import javafx.scene.text.Font;
-
-public class StartCountdownButton extends Button {
+public class StartCountdownButton extends MyButton {
     public StartCountdownButton() {
-        super();
-        this.setText("Démarrer");
-        this.setTextFill(Color.DARKRED);
-        this.setFont(new Font(25));
+        super("Démarrer");
         this.setOnAction(event -> {
             ((GlobalBox) this.getParent()).start();
             this.setVisible(false);
