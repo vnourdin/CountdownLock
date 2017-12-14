@@ -10,12 +10,13 @@ public class ConfigPane extends MyVBox {
 
         TitleLine titleLine = new TitleLine("Configuration");
         WordsConfigLine configWords = new WordsConfigLine();
+        TimerConfigLine timerConfig = new TimerConfigLine();
         HelpConfigLine helpConfigLine = new HelpConfigLine();
         SubmitButton submitButton = new SubmitButton();
         submitButton.setOnAction(clic -> {
-            this.getScene().setRoot(new GameBox(configWords.getWords(), 5, helpConfigLine.isHelpSelected()));
+            this.getScene().setRoot(new GameBox(configWords.getWords(), timerConfig.getTime(), helpConfigLine.isHelpSelected()));
         });
 
-        this.getChildren().addAll(titleLine, configWords, helpConfigLine, submitButton);
+        this.getChildren().addAll(titleLine, configWords, timerConfig, helpConfigLine, submitButton);
     }
 }
