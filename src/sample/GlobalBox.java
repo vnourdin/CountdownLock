@@ -17,16 +17,16 @@ public class GlobalBox extends VBox {
 
         this.countdown = new Countdown(20);
 
-        MyStartCountdownButton startButton = new MyStartCountdownButton(this);
+        MyStartCountdownButton startButton = new MyStartCountdownButton();
 
         this.fieldsGrid = new MyFieldsGrid();
         fullfillFields(words);
 
-        this.finishButton = new MyFinishButton(this);
+        this.finishButton = new MyFinishButton();
 
         this.errorLabel = new MyErrorLabel();
 
-        this.getChildren().addAll(this.countdown, startButton, this.fieldsGrid, finishButton, this.errorLabel);
+        this.getChildren().addAll(this.countdown, startButton, this.fieldsGrid, this.finishButton, this.errorLabel);
     }
 
     private void fullfillFields(String[] words) {
