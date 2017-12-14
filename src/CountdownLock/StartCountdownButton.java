@@ -1,4 +1,4 @@
-package sample;
+package CountdownLock;
 
 public class StartCountdownButton extends MyButton {
     public StartCountdownButton() {

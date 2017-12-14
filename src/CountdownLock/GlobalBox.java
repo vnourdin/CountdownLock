@@ -1,4 +1,4 @@
-package sample;
+package CountdownLock;
 
 import javafx.geometry.Pos;
 import javafx.scene.layout.GridPane;

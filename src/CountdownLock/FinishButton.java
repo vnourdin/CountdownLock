@@ -1,4 +1,4 @@
-package sample;
+package CountdownLock;
 
 public class FinishButton extends MyButton {
     public FinishButton() {

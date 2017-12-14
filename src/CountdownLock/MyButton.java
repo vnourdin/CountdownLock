@@ -1,4 +1,4 @@
-package sample;
+package CountdownLock;
 
 import javafx.scene.control.Button;
 import javafx.scene.layout.*;

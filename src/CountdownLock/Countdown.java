@@ -1,4 +1,4 @@
-package sample;
+package CountdownLock;
 
 import javafx.animation.KeyFrame;
 import javafx.animation.KeyValue;

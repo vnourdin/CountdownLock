@@ -1,4 +1,4 @@
-package sample;
+package CountdownLock;
 
 import javafx.geometry.Insets;
 import javafx.scene.layout.Background;

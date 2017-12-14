@@ -1,4 +1,4 @@
-package sample;
+package CountdownLock;
 
 public class DefeatLabel extends MyLabel {
     public DefeatLabel() {
