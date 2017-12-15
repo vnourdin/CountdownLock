@@ -22,7 +22,7 @@
     -fx-spacing: 60;
 }
 
-.my-button {
+.button {
     -fx-text-fill: DARKRED;
     -fx-font-size: 25px;
 
@@ -33,7 +33,7 @@
     -fx-background-color: LIGHTGRAY;
 }
 
-.my-button:hover {
+.button:hover {
     -fx-background-color: LIGHTBLUE;
 }
 

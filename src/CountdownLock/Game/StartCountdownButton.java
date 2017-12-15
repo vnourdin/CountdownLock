@@ -1,8 +1,8 @@
 package CountdownLock.Game;
 
-import CountdownLock.Generic.MyButton;
+import javafx.scene.control.Button;
 
-public class StartCountdownButton extends MyButton {
+public class StartCountdownButton extends Button {
     public StartCountdownButton() {
         super("Démarrer");
         this.setOnAction(event -> {

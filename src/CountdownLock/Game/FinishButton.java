@@ -1,8 +1,8 @@
 package CountdownLock.Game;
 
-import CountdownLock.Generic.MyButton;
+import javafx.scene.control.Button;
 
-public class FinishButton extends MyButton {
+public class FinishButton extends Button {
     public FinishButton() {
         super("Valider");
         this.setOnAction(event -> ((GameBox) this.getParent()).checkWords());
