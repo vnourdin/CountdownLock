@@ -2,10 +2,10 @@ package CountdownLock.Game;
 
 import CountdownLock.End.DefeatBox;
 import CountdownLock.End.VictoryBox;
-import CountdownLock.Generic.MyVBox;
 import javafx.scene.layout.GridPane;
+import javafx.scene.layout.VBox;
 
-public class GameBox extends MyVBox {
+public class GameBox extends VBox {
 
     private Countdown countdown;
     private GridPane fieldsGrid;
@@ -14,6 +14,7 @@ public class GameBox extends MyVBox {
 
     public GameBox(String[] words, int minutes, boolean help) {
         super();
+        this.getStyleClass().add("vbox");
 
         this.countdown = new Countdown(minutes);
 

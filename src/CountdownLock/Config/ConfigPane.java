@@ -1,9 +1,9 @@
 package CountdownLock.Config;
 
 import CountdownLock.Game.GameBox;
-import CountdownLock.Generic.MyVBox;
+import javafx.scene.layout.VBox;
 
-public class ConfigPane extends MyVBox {
+public class ConfigPane extends VBox {
 
     private WordsConfigLine configWords;
     private TimerConfigLine timerConfig;
@@ -11,7 +11,8 @@ public class ConfigPane extends MyVBox {
     private SubmitButton submitButton;
 
     public ConfigPane() {
-        super(60);
+        super();
+        this.getStyleClass().addAll("vbox", "config-pane");
 
         TitleLine titleLine = new TitleLine("Configuration");
         this.configWords = new WordsConfigLine();

@@ -13,6 +13,15 @@
     -fx-text-fill: WHITE;
 }
 
+.hbox, .vbox {
+    -fx-alignment: center;
+    -fx-spacing: 20;
+}
+
+.config-pane {
+    -fx-spacing: 60;
+}
+
 .my-button {
     -fx-text-fill: DARKRED;
     -fx-font-size: 25px;

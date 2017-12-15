@@ -1,6 +1,10 @@
 package CountdownLock.Config;
 
-import CountdownLock.Generic.MyHBox;
+import javafx.scene.layout.HBox;
 
-public class ConfigLine extends MyHBox {
+public class ConfigLine extends HBox {
+
+    public ConfigLine() {
+        this.getStyleClass().add("hbox");
+    }
 }

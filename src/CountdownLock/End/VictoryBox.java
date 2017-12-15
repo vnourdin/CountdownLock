@@ -1,11 +1,12 @@
 package CountdownLock.End;
 
-import CountdownLock.Generic.MyVBox;
+import javafx.scene.layout.VBox;
 
-public class VictoryBox extends MyVBox {
+public class VictoryBox extends VBox {
 
     public VictoryBox() {
         super();
+        this.getStyleClass().add("vbox");
         this.getChildren().add(new VictoryLabel());
     }
 }
