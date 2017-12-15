@@ -1,3 +1,11 @@
+/* Custom label */
+.my-label {
+    -fx-font-size: 10em;
+    -fx-text-fill: darkred;
+    -fx-text-alignment: center;
+}
+
+/* Custom checkbox size */
 .check-box > .box {
     -fx-padding: 1em;
 }
