@@ -12,8 +12,13 @@ public class WordsConfigLine extends ConfigLine {
         this.wordsInput = new MyTextField();
         this.wordsInput.setStyle("-fx-font-size: 2em");
         this.wordsInput.setMinWidth(500);
+        this.wordsInput.setOnKeyReleased(type -> ((ConfigPane) this.getParent()).updateButton());
 
         this.getChildren().addAll(wordsLabel, this.wordsInput);
+    }
+
+    public boolean isFilled() {
+        return !this.wordsInput.getText().isEmpty();
     }
 
     public String[] getWords() {
