@@ -1,11 +1,11 @@
 package CountdownLock.Game;
 
 import CountdownLock.Generic.BackgroundFactory;
-import CountdownLock.Generic.MyTextField;
+import javafx.scene.control.TextField;
 import javafx.scene.layout.Background;
 import javafx.scene.paint.Color;
 
-public class GameField extends MyTextField {
+public class GameField extends TextField {
     private String passphrase;
     private Background correctBack = BackgroundFactory.get(Color.LIGHTBLUE);
     private Background incorrectBack = BackgroundFactory.get(Color.INDIANRED);

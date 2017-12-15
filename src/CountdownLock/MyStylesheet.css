@@ -26,3 +26,7 @@
 .check-box > .box > .mark {
     -fx-padding: 1em;
 }
+
+.text-field {
+    -fx-font-size: 40px;
+}
