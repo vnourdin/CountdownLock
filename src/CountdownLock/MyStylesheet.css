@@ -1,11 +1,24 @@
-/* Custom label */
 .my-label {
     -fx-font-size: 10em;
     -fx-text-fill: darkred;
     -fx-text-alignment: center;
 }
 
-/* Custom checkbox size */
+.my-button {
+    -fx-text-fill: darkred;
+    -fx-font-size: 25px;
+
+    -fx-border-color: gray;
+    -fx-border-width: 4px;
+    -fx-border-style: solid;
+
+    -fx-background-color: lightgray;
+}
+
+.my-button:hover {
+    -fx-background-color: lightblue;
+}
+
 .check-box > .box {
     -fx-padding: 1em;
 }
