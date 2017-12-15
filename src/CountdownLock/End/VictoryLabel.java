@@ -1,11 +1,11 @@
 package CountdownLock.End;
 
-import CountdownLock.Generic.MyLabel;
-import javafx.scene.paint.Color;
+import javafx.scene.control.Label;
 
-public class VictoryLabel extends MyLabel {
+public class VictoryLabel extends Label {
+
     public VictoryLabel() {
         super("Bravo\nvous avez\ngagné!");
-        this.setTextFill(Color.FORESTGREEN);
+        this.getStyleClass().add("victory-label");
     }
 }

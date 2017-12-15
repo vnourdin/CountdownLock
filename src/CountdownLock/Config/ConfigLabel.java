@@ -1,10 +1,10 @@
 package CountdownLock.Config;
 
-import CountdownLock.Generic.MyLabel;
+import javafx.scene.control.Label;
 import javafx.scene.paint.Color;
 import javafx.scene.text.TextAlignment;
 
-public class ConfigLabel extends MyLabel {
+public class ConfigLabel extends Label {
 
     public ConfigLabel(String text) {
         super(text);

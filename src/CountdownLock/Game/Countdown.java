@@ -2,7 +2,6 @@ package CountdownLock.Game;
 
 import CountdownLock.Generic.BackgroundFactory;
 import CountdownLock.Generic.MyIntegerProperties;
-import CountdownLock.Generic.MyLabel;
 import javafx.animation.KeyFrame;
 import javafx.animation.KeyValue;
 import javafx.animation.Timeline;
@@ -38,9 +37,14 @@ public class Countdown extends HBox {
         MyIntegerProperties seconds = new MyIntegerProperties(59);
 
         // Labels
-        Label minutesLabel = new MyLabel(minutes);
-        Label doublePoints = new MyLabel(":");
-        Label secondsLabel = new MyLabel(seconds);
+        Label minutesLabel = new Label();
+        minutesLabel.textProperty().bind(minutes.getStringProperty());
+
+        Label doublePoints = new Label(":");
+
+        Label secondsLabel = new Label();
+        secondsLabel.textProperty().bind(seconds.getStringProperty());
+
         this.getChildren().addAll(minutesLabel, doublePoints, secondsLabel);
 
         // KeyFrame

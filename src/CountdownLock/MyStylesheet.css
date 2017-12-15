@@ -1,22 +1,31 @@
-.my-label {
+.label {
     -fx-font-size: 10em;
-    -fx-text-fill: darkred;
+    -fx-text-fill: DARKRED;
     -fx-text-alignment: center;
 }
 
+.victory-label {
+    -fx-text-fill: FORESTGREEN;
+}
+
+.title {
+    -fx-font-size: 5em;
+    -fx-text-fill: WHITE;
+}
+
 .my-button {
-    -fx-text-fill: darkred;
+    -fx-text-fill: DARKRED;
     -fx-font-size: 25px;
 
-    -fx-border-color: gray;
+    -fx-border-color: GRAY;
     -fx-border-width: 4px;
     -fx-border-style: solid;
 
-    -fx-background-color: lightgray;
+    -fx-background-color: LIGHTGRAY;
 }
 
 .my-button:hover {
-    -fx-background-color: lightblue;
+    -fx-background-color: LIGHTBLUE;
 }
 
 .check-box > .box {
