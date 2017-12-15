@@ -8,7 +8,7 @@ public class ConfigLabel extends Label {
 
     public ConfigLabel(String text) {
         super(text);
-        this.setStyle("-fx-font-size: 2em");
+        this.setStyle("-fx-font-size: 2em; -fx-text-fill: MIDNIGHTBLUE; -fx-text-alignment: right");
         this.setTextFill(Color.MIDNIGHTBLUE);
         this.setTextAlignment(TextAlignment.RIGHT);
     }

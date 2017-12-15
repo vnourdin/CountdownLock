@@ -10,8 +10,7 @@ public class WordsConfigLine extends ConfigLine {
         ConfigLabel wordsLabel = new ConfigLabel("Mots à trouver:");
 
         this.wordsInput = new TextField();
-        this.wordsInput.setStyle("-fx-font-size: 2em");
-        this.wordsInput.setMinWidth(500);
+        this.wordsInput.setStyle("-fx-font-size: 2em; -fx-min-width: 500");
         this.wordsInput.setOnKeyReleased(type -> ((ConfigPane) this.getParent()).updateButton());
 
         this.getChildren().addAll(wordsLabel, this.wordsInput);
