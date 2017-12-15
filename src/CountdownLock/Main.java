@@ -1,10 +1,12 @@
 package CountdownLock;
 
-import CountdownLock.Config.ConfigPane;
 import javafx.application.Application;
+import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.input.KeyCombination;
 import javafx.stage.Stage;
+
+import java.io.IOException;
 
 public class Main extends Application {
 
@@ -13,15 +15,16 @@ public class Main extends Application {
     }
 
     @Override
-    public void start(Stage primaryStage) {
-        primaryStage.setTitle("Compte à rebours");
+    public void start(Stage stage) throws IOException {
+        stage.setTitle("Compte à rebours");
 
-        Scene scene = new Scene(new ConfigPane());
+        // Scene scene = new Scene(new ConfigPane());
+        Scene scene = new Scene(FXMLLoader.load(getClass().getResource("ConfigWindow.fxml")));
         scene.getStylesheets().add("CountdownLock/MyStylesheet.css");
 
-        primaryStage.setScene(scene);
-        primaryStage.setFullScreen(true);
-        primaryStage.setFullScreenExitKeyCombination(KeyCombination.NO_MATCH);
-        primaryStage.show();
+        stage.setScene(scene);
+        stage.setFullScreen(true);
+        stage.setFullScreenExitKeyCombination(KeyCombination.NO_MATCH);
+        stage.show();
     }
 }
