@@ -25,7 +25,7 @@
            text="Durée du chronomètre:"/>
     <Spinner styleClass="config-field"
              GridPane.rowIndex="2" GridPane.columnIndex="1"
-             maxWidth="125"
+             maxWidth="100"
              editable="true"
              initialValue="20"
              min="5"
