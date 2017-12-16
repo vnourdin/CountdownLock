@@ -2,9 +2,10 @@
 
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
-<GridPane xmlns:fx="http://javafx.com/fxml"
-          xmlns="http://javafx.com/javafx"
+<GridPane fx:id="gridPane"
           fx:controller="CountdownLock.Config.ConfigWindow"
+          xmlns:fx="http://javafx.com/fxml"
+          xmlns="http://javafx.com/javafx"
           alignment="CENTER"
           vgap="60"
           hgap="40">
@@ -17,13 +18,15 @@
     <Label styleClass="config-label"
            GridPane.rowIndex="1" GridPane.columnIndex="0"
            text="Mots à trouver: "/>
-    <TextField styleClass="config-field"
+    <TextField fx:id="words"
+               styleClass="config-field"
                GridPane.rowIndex="1" GridPane.columnIndex="1"/>
 
     <Label styleClass="config-label"
            GridPane.rowIndex="2" GridPane.columnIndex="0"
            text="Durée du chronomètre:"/>
-    <Spinner styleClass="config-field"
+    <Spinner fx:id="timer"
+             styleClass="config-field"
              GridPane.rowIndex="2" GridPane.columnIndex="1"
              maxWidth="100"
              editable="true"
@@ -31,16 +34,15 @@
              min="5"
              max="60"/>
 
-
     <Label styleClass="config-label"
            GridPane.rowIndex="3" GridPane.columnIndex="0"
            text="Activer l'aide:"/>
-    <CheckBox
-            GridPane.rowIndex="3" GridPane.columnIndex="1"/>
-
+    <CheckBox fx:id="help"
+              GridPane.rowIndex="3" GridPane.columnIndex="1"/>
 
     <Button
             GridPane.rowIndex="4" GridPane.columnIndex="1"
-            text="Valider"/>
+            text="Valider"
+            onAction="#handleSubmitButtonAction"/>
 
 </GridPane>
