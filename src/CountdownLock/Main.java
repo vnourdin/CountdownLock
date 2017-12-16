@@ -19,7 +19,7 @@ public class Main extends Application {
         stage.setTitle("Compte à rebours");
 
         // Scene scene = new Scene(new ConfigPane());
-        Scene scene = new Scene(FXMLLoader.load(getClass().getResource("ConfigWindow.fxml")));
+        Scene scene = new Scene(FXMLLoader.load(getClass().getResource("Config/ConfigWindow.fxml")));
         scene.getStylesheets().add("CountdownLock/MyStylesheet.css");
 
         stage.setScene(scene);

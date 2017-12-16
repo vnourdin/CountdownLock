@@ -31,10 +31,10 @@
              styleClass="config-field"
              GridPane.rowIndex="2" GridPane.columnIndex="1"
              maxWidth="100"
-             editable="true"
              initialValue="20"
              min="5"
-             max="60"/>
+             max="60"
+             amountToStepBy="5"/>
 
     <Label styleClass="config-label"
            GridPane.rowIndex="3" GridPane.columnIndex="0"
