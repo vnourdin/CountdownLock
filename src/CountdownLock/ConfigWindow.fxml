@@ -2,9 +2,9 @@
 
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
-<GridPane fx:id="gridPane"
+<GridPane xmlns:fx="http://javafx.com/fxml"
+          fx:id="gridPane"
           fx:controller="CountdownLock.Config.ConfigWindow"
-          xmlns:fx="http://javafx.com/fxml"
           xmlns="http://javafx.com/javafx"
           alignment="CENTER"
           vgap="60"
@@ -13,6 +13,7 @@
     <Label styleClass="title"
            GridPane.rowIndex="0" GridPane.columnIndex="0"
            GridPane.columnSpan="2"
+           GridPane.halignment="CENTER"
            text="Configuration"/>
 
     <Label styleClass="config-label"
@@ -20,7 +21,8 @@
            text="Mots à trouver: "/>
     <TextField fx:id="words"
                styleClass="config-field"
-               GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+               GridPane.rowIndex="1" GridPane.columnIndex="1"
+               onKeyReleased="#updateButtonState"/>
 
     <Label styleClass="config-label"
            GridPane.rowIndex="2" GridPane.columnIndex="0"
@@ -40,9 +42,17 @@
     <CheckBox fx:id="help"
               GridPane.rowIndex="3" GridPane.columnIndex="1"/>
 
-    <Button
+    <HBox
             GridPane.rowIndex="4" GridPane.columnIndex="1"
-            text="Valider"
-            onAction="#handleSubmitButtonAction"/>
+            GridPane.halignment="RIGHT"
+            spacing="20">
+        <Label fx:id="submitLabel"
+               styleClass="error-label"
+               text="Vous devenez entrer&#13;au moins un mot."/>
+        <Button fx:id="submitButton"
+                text="Valider"
+                disable="true"
+                onAction="#handleSubmitButtonAction"/>
+    </HBox>
 
 </GridPane>

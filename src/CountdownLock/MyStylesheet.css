@@ -10,6 +10,11 @@
     -fx-text-alignment: right
 }
 
+.error-label {
+    -fx-font-size: 1.5em;
+    -fx-text-fill: RED;
+}
+
 .victory-label {
     -fx-text-fill: FORESTGREEN;
 }
