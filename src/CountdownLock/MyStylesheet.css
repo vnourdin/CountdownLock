@@ -3,9 +3,13 @@
 }
 
 .label {
+    -fx-text-alignment: center;
+}
+
+.countdown {
     -fx-font-size: 10em;
     -fx-text-fill: DARKRED;
-    -fx-text-alignment: center;
+    -fx-padding: 60 0 60 0;
 }
 
 .config-label {
