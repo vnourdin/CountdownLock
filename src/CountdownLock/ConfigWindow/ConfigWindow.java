@@ -1,9 +1,15 @@
 package CountdownLock.ConfigWindow;
 
-import CountdownLock.Game.GameBox;
+import CountdownLock.Generic.URLLoader;
 import CountdownLock.Generic.WindowController;
+import CountdownLock.StartWindow.StartWindow;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
 import javafx.scene.control.*;
+
+import java.io.IOException;
+import java.net.URL;
 
 
 public class ConfigWindow extends WindowController {
@@ -19,8 +25,13 @@ public class ConfigWindow extends WindowController {
     private Label submitLabel;
 
     @FXML
-    protected void handleSubmitButtonAction() {
-        root.getScene().setRoot(new GameBox(getWords(), getMinutes(), getHelp()));
+    protected void handleSubmitButtonAction() throws IOException {
+        URL location = URLLoader.getURL("StartWindow/StartWindow.fxml");
+        FXMLLoader loader = new FXMLLoader(location);
+        Parent newRoot = loader.load();
+        loader.<StartWindow>getController().setValues(getWords(), getMinutes(), getHelp());
+
+        root.getScene().setRoot(newRoot);
     }
 
     private String[] getWords() {
