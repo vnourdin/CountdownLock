@@ -29,7 +29,7 @@
     -fx-padding: 80 80 80 80;
 }
 
-#title-hbox {
+.title-hbox {
     -fx-background-color: GRAY;
 }
 

@@ -8,8 +8,7 @@
       fx:id="root"
       styleClass="vbox">
 
-    <HBox styleClass="hbox"
-          id="title-hbox">
+    <HBox styleClass="hbox, title-hbox">
         <Label styleClass="title"
                text="Configuration"/>
     </HBox>
