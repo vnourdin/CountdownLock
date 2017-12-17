@@ -1,3 +1,7 @@
+.root {
+    -fx-background-color: LIGHTGRAY;
+}
+
 .label {
     -fx-font-size: 10em;
     -fx-text-fill: DARKRED;
