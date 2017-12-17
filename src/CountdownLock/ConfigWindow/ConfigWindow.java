@@ -1,4 +1,4 @@
-package CountdownLock.Config;
+package CountdownLock.ConfigWindow;
 
 import CountdownLock.Game.GameBox;
 import javafx.fxml.FXML;
