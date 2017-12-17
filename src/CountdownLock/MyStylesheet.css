@@ -22,8 +22,11 @@
 .title {
     -fx-font-size: 5em;
     -fx-text-fill: WHITE;
-    -fx-background-color: GREY;
     -fx-padding: 80 80 80 80;
+}
+
+#title-hbox {
+    -fx-background-color: GRAY;
 }
 
 .hbox, .vbox {

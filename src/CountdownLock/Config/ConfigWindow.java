@@ -2,13 +2,13 @@ package CountdownLock.Config;
 
 import CountdownLock.Game.GameBox;
 import javafx.fxml.FXML;
+import javafx.scene.Parent;
 import javafx.scene.control.*;
-import javafx.scene.layout.GridPane;
 
 
 public class ConfigWindow {
     @FXML
-    private GridPane gridPane;
+    private Parent root;
     @FXML
     private TextField words;
     @FXML
@@ -22,7 +22,7 @@ public class ConfigWindow {
 
     @FXML
     protected void handleSubmitButtonAction() {
-        gridPane.getScene().setRoot(new GameBox(getWords(), getMinutes(), getHelp()));
+        root.getScene().setRoot(new GameBox(getWords(), getMinutes(), getHelp()));
     }
 
     private String[] getWords() {
