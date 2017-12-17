@@ -43,8 +43,14 @@
         <CheckBox fx:id="help"
                   GridPane.rowIndex="3" GridPane.columnIndex="1"/>
 
+        <Label styleClass="config-label"
+               GridPane.rowIndex="4" GridPane.columnIndex="0"
+               text="Activer le mode stress:"/>
+        <CheckBox fx:id="stress"
+                  GridPane.rowIndex="4" GridPane.columnIndex="1"/>
+
         <HBox
-                GridPane.rowIndex="4" GridPane.columnIndex="1"
+                GridPane.rowIndex="5" GridPane.columnIndex="1"
                 GridPane.halignment="RIGHT"
                 spacing="20">
             <Label fx:id="submitLabel"

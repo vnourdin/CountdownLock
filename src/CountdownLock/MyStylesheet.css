@@ -9,7 +9,6 @@
 .countdown {
     -fx-font-size: 10em;
     -fx-text-fill: DARKRED;
-    -fx-padding: 60 0 60 0;
 }
 
 .config-label {

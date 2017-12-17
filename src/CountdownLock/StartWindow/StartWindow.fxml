@@ -10,7 +10,8 @@
       fx:id="root"
       styleClass="vbox">
 
-    <HBox styleClass="hbox, title-hbox">
+    <HBox fx:id="countdown"
+          styleClass="hbox, title-hbox">
         <Label fx:id="minutesLabel" styleClass="countdown"/>
         <Label text=":" styleClass="countdown"/>
         <Label fx:id="secondsLabel" styleClass="countdown"/>

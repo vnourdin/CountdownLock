@@ -9,9 +9,11 @@ import javafx.animation.KeyFrame;
 import javafx.animation.KeyValue;
 import javafx.animation.Timeline;
 import javafx.fxml.FXML;
+import javafx.geometry.Insets;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-import javafx.scene.layout.GridPane;
+import javafx.scene.layout.*;
+import javafx.scene.paint.Color;
 import javafx.util.Duration;
 
 public class StartWindow extends WindowController {
@@ -21,11 +23,16 @@ public class StartWindow extends WindowController {
     protected Label minutesLabel, secondsLabel, errorLabel;
     @FXML
     protected GridPane fieldsGrid;
+    @FXML
+    protected HBox countdown;
     private Timeline secondsTimeline, errorTimeline;
     private int timer;
     private MyIntegerProperties minutes, seconds;
+    private Border normalBorder, stressBorder;
+    private Insets normalInsets, stressInsets;
+    private boolean doStress, isStressed;
 
-    public void init(String[] words, int duration, boolean help) {
+    public void init(String[] words, int duration, boolean help, boolean doStress) {
         minutes = new MyIntegerProperties(duration);
         minutesLabel.textProperty().bind(minutes.getStringProperty());
 
@@ -39,8 +46,8 @@ public class StartWindow extends WindowController {
                         defeat();
                     } else {
                         if (minutes.isCritical())
-                            // TODO
-                            minutes.decrease();
+                            this.stress();
+                        minutes.decrease();
                         seconds.setValue(59);
                         secondsTimeline.playFromStart();
                     }
@@ -49,6 +56,10 @@ public class StartWindow extends WindowController {
 
         secondsTimeline = new Timeline();
         secondsTimeline.getKeyFrames().add(secondsKeyFrame);
+
+        this.normalInsets = new Insets(75, 75, 75, 75);
+        countdown.setPadding(normalInsets);
+        initStress();
 
         timer = 6;
         KeyFrame activationKeyFrame = new KeyFrame(Duration.seconds(0.2),
@@ -67,6 +78,7 @@ public class StartWindow extends WindowController {
         errorTimeline.getKeyFrames().add(activationKeyFrame);
 
         fullfillFields(words, help);
+        this.doStress = doStress;
     }
 
     private void fullfillFields(String[] words, boolean help) {
@@ -79,12 +91,25 @@ public class StartWindow extends WindowController {
         }
     }
 
+    private void initStress() {
+        if (doStress) {
+            this.isStressed = false;
+
+            this.normalBorder = Border.EMPTY;
+            this.stressBorder = new Border(new BorderStroke(Color.DARKRED, BorderStrokeStyle.SOLID, new CornerRadii(0), new BorderWidths(4, 4, 4, 4)));
+
+            this.stressInsets = new Insets(71, 71, 71, 71);
+
+            countdown.setBorder(normalBorder);
+        }
+    }
+
     @FXML
     protected void handleStartButtonAction() {
         minutes.decrease();
         seconds.setValue(59);
 
-        startButton.setVisible(false);
+        root.getChildren().remove(startButton);
         fieldsGrid.setVisible(true);
         confirmButton.setVisible(true);
 
@@ -110,5 +135,32 @@ public class StartWindow extends WindowController {
 
     private void defeat() {
         root.getScene().setRoot(new DefeatBox());
+    }
+
+    private void stress() {
+        if (!doStress || this.isStressed)
+            return;
+
+        Timeline stressTimeline = new Timeline();
+
+        KeyFrame activationKeyFrame = new KeyFrame(Duration.seconds(0.2),
+                onFinished -> {
+                    this.invertBorder();
+                    stressTimeline.playFromStart();
+                }
+        );
+        stressTimeline.getKeyFrames().add(activationKeyFrame);
+        stressTimeline.play();
+        this.isStressed = true;
+    }
+
+    private void invertBorder() {
+        if (countdown.getBorder() == this.normalBorder) {
+            countdown.setPadding(this.stressInsets);
+            countdown.setBorder(this.stressBorder);
+        } else {
+            countdown.setPadding(this.normalInsets);
+            countdown.setBorder(this.normalBorder);
+        }
     }
 }

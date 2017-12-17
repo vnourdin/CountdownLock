@@ -18,7 +18,7 @@ public class ConfigWindow extends WindowController {
     @FXML
     private Spinner<Integer> timer;
     @FXML
-    private CheckBox help;
+    private CheckBox help, stress;
     @FXML
     private Button submitButton;
     @FXML
@@ -29,7 +29,7 @@ public class ConfigWindow extends WindowController {
         URL location = URLLoader.getURL("StartWindow/StartWindow.fxml");
         FXMLLoader loader = new FXMLLoader(location);
         Parent newRoot = loader.load();
-        loader.<StartWindow>getController().init(getWords(), getMinutes(), getHelp());
+        loader.<StartWindow>getController().init(getWords(), getMinutes(), getHelp(), getStress());
 
         root.getScene().setRoot(newRoot);
     }
@@ -44,6 +44,10 @@ public class ConfigWindow extends WindowController {
 
     private boolean getHelp() {
         return help.isSelected();
+    }
+
+    private boolean getStress() {
+        return stress.isSelected();
     }
 
     @FXML
