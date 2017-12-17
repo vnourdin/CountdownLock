@@ -1,5 +1,6 @@
 package CountdownLock;
 
+import CountdownLock.Generic.URLLoader;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -7,6 +8,7 @@ import javafx.scene.input.KeyCombination;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.net.URL;
 
 public class Main extends Application {
 
@@ -18,8 +20,9 @@ public class Main extends Application {
     public void start(Stage stage) throws IOException {
         stage.setTitle("Compte à rebours");
 
-        // Scene scene = new Scene(new ConfigPane());
-        Scene scene = new Scene(FXMLLoader.load(getClass().getResource("ConfigWindow/ConfigWindow.fxml")));
+        URL location = URLLoader.getURL("ConfigWindow/ConfigWindow.fxml");
+
+        Scene scene = new Scene(FXMLLoader.load(location));
         scene.getStylesheets().add("CountdownLock/MyStylesheet.css");
 
         stage.setScene(scene);
