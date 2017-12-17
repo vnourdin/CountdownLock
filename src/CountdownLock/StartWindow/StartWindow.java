@@ -1,4 +1,6 @@
 package CountdownLock.StartWindow;
 
-public class StartWindow {
+import CountdownLock.Generic.WindowController;
+
+public class StartWindow extends WindowController {
 }

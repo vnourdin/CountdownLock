@@ -1,14 +1,12 @@
 package CountdownLock.ConfigWindow;
 
 import CountdownLock.Game.GameBox;
+import CountdownLock.Generic.WindowController;
 import javafx.fxml.FXML;
-import javafx.scene.Parent;
 import javafx.scene.control.*;
 
 
-public class ConfigWindow {
-    @FXML
-    private Parent root;
+public class ConfigWindow extends WindowController {
     @FXML
     private TextField words;
     @FXML
