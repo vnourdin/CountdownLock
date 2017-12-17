@@ -45,28 +45,6 @@ public class Countdown extends HBox {
         Label secondsLabel = new Label();
         secondsLabel.textProperty().bind(seconds.getStringProperty());
 
-        this.getChildren().addAll(minutesLabel, doublePoints, secondsLabel);
-
-        // KeyFrame
-        KeyFrame secondsKeyFrame = new KeyFrame(Duration.seconds(seconds.get()),
-                "Secondes",
-                onFinished -> {
-                    if (minutes.isZero()) {
-                        ((GameBox) this.getParent()).defeat();
-                    } else {
-                        if (minutes.isCritical())
-                            this.stress();
-                        minutes.decrease();
-                        seconds.setValue(59);
-                        this.secondsTimeline.playFromStart();
-                    }
-                },
-                new KeyValue(seconds, 0));
-
-        // TimeLine
-        this.secondsTimeline = new Timeline();
-        this.secondsTimeline.getKeyFrames().add(secondsKeyFrame);
-
         // Background
         this.setBackground(BackgroundFactory.get(Color.GRAY));
         this.setPadding(this.normalInsets);

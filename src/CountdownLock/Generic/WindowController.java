@@ -1,9 +1,9 @@
 package CountdownLock.Generic;
 
 import javafx.fxml.FXML;
-import javafx.scene.Parent;
+import javafx.scene.layout.Pane;
 
 public class WindowController {
     @FXML
-    protected Parent root;
+    protected Pane root;
 }

@@ -73,6 +73,12 @@
     -fx-font-size: 40px;
 }
 
+.fields-grid {
+    -fx-alignment: center;
+    -fx-vgap: 20;
+    -fx-hgap: 20;
+}
+
 .config-field {
     -fx-font-size: 2em;
 }

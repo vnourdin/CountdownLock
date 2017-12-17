@@ -12,6 +12,7 @@ public class GameField extends TextField {
 
     public GameField(String passphrase, boolean help) {
         super();
+        this.getStyleClass().add("config-field");
         this.passphrase = passphrase;
         if (help) {
             this.setBackground(this.incorrectBack);
