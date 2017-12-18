@@ -124,7 +124,7 @@ public class GameWindow extends WindowController {
 
     private void initErrorLabel() {
         timer = 6;
-        KeyFrame activationKeyFrame = new KeyFrame(Duration.seconds(0.2),
+        KeyFrame activationKeyFrame = new KeyFrame(Duration.seconds(0.3),
                 onFinished -> {
                     if (timer == 0) {
                         timer = 6;
