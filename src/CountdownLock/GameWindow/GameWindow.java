@@ -1,4 +1,4 @@
-package CountdownLock.StartWindow;
+package CountdownLock.GameWindow;
 
 import CountdownLock.End.DefeatBox;
 import CountdownLock.End.VictoryBox;
@@ -16,7 +16,7 @@ import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
 import javafx.util.Duration;
 
-public class StartWindow extends WindowController {
+public class GameWindow extends WindowController {
     @FXML
     protected Button startButton, confirmButton;
     @FXML
