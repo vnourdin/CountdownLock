@@ -1,6 +1,6 @@
-package CountdownLock.ConfigWindow;
+package CountdownLock.Config;
 
-import CountdownLock.GameWindow.GameWindow;
+import CountdownLock.Game.GameWindow;
 import CountdownLock.Generic.URLLoader;
 import CountdownLock.Generic.WindowController;
 import javafx.fxml.FXML;
@@ -26,7 +26,7 @@ public class ConfigWindow extends WindowController {
 
     @FXML
     protected void handleSubmitButtonAction() throws IOException {
-        URL location = URLLoader.getURL("GameWindow/GameWindow.fxml");
+        URL location = URLLoader.getURL("Game/GameWindow.fxml");
         FXMLLoader loader = new FXMLLoader(location);
         Parent newRoot = loader.load();
         loader.<GameWindow>getController().init(getWords(), getMinutes(), getHelp(), getStress());

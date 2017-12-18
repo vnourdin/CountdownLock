@@ -1,8 +1,7 @@
-package CountdownLock.GameWindow;
+package CountdownLock.Game;
 
 import CountdownLock.End.DefeatBox;
 import CountdownLock.End.VictoryBox;
-import CountdownLock.Game.GameField;
 import CountdownLock.Generic.MyIntegerProperties;
 import CountdownLock.Generic.WindowController;
 import javafx.animation.KeyFrame;
