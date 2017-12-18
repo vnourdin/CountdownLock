@@ -19,7 +19,7 @@
 
     <Button fx:id="startButton"
             text="Démarrer"
-            onAction="#handleStartButtonAction"/>
+            onAction="#handleStartButton"/>
 
     <GridPane fx:id="fieldsGrid"
               styleClass="fields-grid"
@@ -27,7 +27,7 @@
 
     <Button fx:id="confirmButton"
             text="Valider"
-            onAction="#handleConfirmButtonAction"
+            onAction="#handleConfirmButton"
             visible="false"/>
 
     <Label fx:id="errorLabel"
