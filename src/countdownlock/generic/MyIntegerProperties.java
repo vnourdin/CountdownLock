@@ -1,4 +1,4 @@
-package CountdownLock.Generic;
+package countdownlock.generic;
 
 import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleStringProperty;

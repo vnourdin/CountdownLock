@@ -1,6 +1,6 @@
-package CountdownLock.Generic;
+package countdownlock.generic;
 
-import CountdownLock.Main;
+import countdownlock.Main;
 
 import java.net.URL;
 

@@ -6,7 +6,7 @@
 <?import javafx.scene.layout.VBox?>
 <VBox xmlns:fx="http://javafx.com/fxml"
       xmlns="http://javafx.com/javafx"
-      fx:controller="CountdownLock.Game.GameWindow"
+      fx:controller="countdownlock.game.GameWindow"
       fx:id="root"
       styleClass="vbox">
 

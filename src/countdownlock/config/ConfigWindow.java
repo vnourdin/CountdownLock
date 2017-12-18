@@ -1,8 +1,8 @@
-package CountdownLock.Config;
+package countdownlock.config;
 
-import CountdownLock.Game.GameWindow;
-import CountdownLock.Generic.URLLoader;
-import CountdownLock.Generic.WindowController;
+import countdownlock.game.GameWindow;
+import countdownlock.generic.URLLoader;
+import countdownlock.generic.WindowController;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -26,7 +26,7 @@ public class ConfigWindow extends WindowController {
 
     @FXML
     protected void handleSubmitButtonAction() throws IOException {
-        URL location = URLLoader.getURL("Game/GameWindow.fxml");
+        URL location = URLLoader.getURL("game/GameWindow.fxml");
         FXMLLoader loader = new FXMLLoader(location);
         Parent newRoot = loader.load();
         loader.<GameWindow>getController().init(getWords(), getMinutes(), getHelp(), getStress());

@@ -1,4 +1,4 @@
-package CountdownLock.End;
+package countdownlock.end;
 
 import javafx.scene.layout.VBox;
 

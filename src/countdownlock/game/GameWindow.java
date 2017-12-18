@@ -1,9 +1,9 @@
-package CountdownLock.Game;
+package countdownlock.game;
 
-import CountdownLock.End.DefeatBox;
-import CountdownLock.End.VictoryBox;
-import CountdownLock.Generic.MyIntegerProperties;
-import CountdownLock.Generic.WindowController;
+import countdownlock.end.DefeatBox;
+import countdownlock.end.VictoryBox;
+import countdownlock.generic.MyIntegerProperties;
+import countdownlock.generic.WindowController;
 import javafx.animation.KeyFrame;
 import javafx.animation.KeyValue;
 import javafx.animation.Timeline;

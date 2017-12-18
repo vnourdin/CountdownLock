@@ -1,4 +1,4 @@
-package CountdownLock.Game;
+package countdownlock.game;
 
 import javafx.animation.Timeline;
 import javafx.scene.control.Label;

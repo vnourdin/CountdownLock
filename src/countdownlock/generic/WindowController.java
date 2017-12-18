@@ -1,4 +1,4 @@
-package CountdownLock.Generic;
+package countdownlock.generic;
 
 import javafx.fxml.FXML;
 import javafx.scene.layout.Pane;

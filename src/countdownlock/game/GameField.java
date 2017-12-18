@@ -1,6 +1,6 @@
-package CountdownLock.Game;
+package countdownlock.game;
 
-import CountdownLock.Generic.BackgroundFactory;
+import countdownlock.generic.BackgroundFactory;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.Background;
 import javafx.scene.paint.Color;
