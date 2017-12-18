@@ -33,6 +33,13 @@ public class StartWindow extends WindowController {
     private boolean doStress, isStressed;
 
     public void init(String[] words, int duration, boolean help, boolean doStress) {
+        this.doStress = doStress;
+        initCountdown(duration);
+        fullfillFields(words, help);
+        initErrorLabel();
+    }
+
+    private void initCountdown(int duration) {
         minutes = new MyIntegerProperties(duration);
         minutesLabel.textProperty().bind(minutes.getStringProperty());
 
@@ -60,77 +67,6 @@ public class StartWindow extends WindowController {
         normalInsets = new Insets(75, 75, 75, 75);
         countdown.setPadding(normalInsets);
         initStress();
-
-        timer = 6;
-        KeyFrame activationKeyFrame = new KeyFrame(Duration.seconds(0.2),
-                onFinished -> {
-                    if (timer == 0) {
-                        timer = 6;
-                        errorLabel.setVisible(false);
-                    } else {
-                        timer--;
-                        errorLabel.setVisible(!errorLabel.isVisible());
-                        errorTimeline.playFromStart();
-                    }
-                });
-
-        errorTimeline = new Timeline();
-        errorTimeline.getKeyFrames().add(activationKeyFrame);
-
-        fullfillFields(words, help);
-        doStress = doStress;
-    }
-
-    private void fullfillFields(String[] words, boolean help) {
-        for (int wordsIndice = 0, row = 0, column = 0; wordsIndice < words.length; wordsIndice++, column++) {
-            if (wordsIndice % 2 == 0) {
-                row++;
-                column = 0;
-            }
-            fieldsGrid.add(new GameField(words[wordsIndice], help), column, row);
-        }
-    }
-
-    private void initStress() {
-        if (doStress) {
-            isStressed = false;
-
-            normalBorder = Border.EMPTY;
-            stressBorder = new Border(new BorderStroke(Color.DARKRED, BorderStrokeStyle.SOLID, new CornerRadii(0), new BorderWidths(4, 4, 4, 4)));
-
-            stressInsets = new Insets(71, 71, 71, 71);
-
-            countdown.setBorder(normalBorder);
-        }
-    }
-
-    @FXML
-    protected void handleStartButton() {
-        minutes.decrease();
-        seconds.setValue(59);
-
-        root.getChildren().remove(startButton);
-        fieldsGrid.setVisible(true);
-        confirmButton.setVisible(true);
-
-        secondsTimeline.playFromStart();
-    }
-
-    @FXML
-    protected void handleConfirmButton() {
-        boolean everyFieldsWellFilled = true;
-        for (int i = 0; i < fieldsGrid.getChildren().size(); i++) {
-            if (!((GameField) (fieldsGrid.getChildren().get(i))).isWellFilled())
-                everyFieldsWellFilled = false;
-        }
-        if (everyFieldsWellFilled)
-            victory();
-        else
-            errorTimeline.playFromStart();
-    }
-
-    private void victory() {
-        root.getScene().setRoot(new VictoryBox());
     }
 
     private void defeat() {
@@ -162,5 +98,75 @@ public class StartWindow extends WindowController {
             countdown.setPadding(normalInsets);
             countdown.setBorder(normalBorder);
         }
+    }
+
+    private void initStress() {
+        if (doStress) {
+            isStressed = false;
+
+            normalBorder = Border.EMPTY;
+            stressBorder = new Border(new BorderStroke(Color.DARKRED, BorderStrokeStyle.SOLID, new CornerRadii(0), new BorderWidths(4, 4, 4, 4)));
+
+            stressInsets = new Insets(71, 71, 71, 71);
+
+            countdown.setBorder(normalBorder);
+        }
+    }
+
+    private void fullfillFields(String[] words, boolean help) {
+        for (int wordsIndice = 0, row = 0, column = 0; wordsIndice < words.length; wordsIndice++, column++) {
+            if (wordsIndice % 2 == 0) {
+                row++;
+                column = 0;
+            }
+            fieldsGrid.add(new GameField(words[wordsIndice], help), column, row);
+        }
+    }
+
+    private void initErrorLabel() {
+        timer = 6;
+        KeyFrame activationKeyFrame = new KeyFrame(Duration.seconds(0.2),
+                onFinished -> {
+                    if (timer == 0) {
+                        timer = 6;
+                        errorLabel.setVisible(false);
+                    } else {
+                        timer--;
+                        errorLabel.setVisible(!errorLabel.isVisible());
+                        errorTimeline.playFromStart();
+                    }
+                });
+
+        errorTimeline = new Timeline();
+        errorTimeline.getKeyFrames().add(activationKeyFrame);
+    }
+
+    @FXML
+    protected void handleStartButton() {
+        minutes.decrease();
+        seconds.setValue(59);
+
+        root.getChildren().remove(startButton);
+        fieldsGrid.setVisible(true);
+        confirmButton.setVisible(true);
+
+        secondsTimeline.playFromStart();
+    }
+
+    @FXML
+    protected void handleConfirmButton() {
+        boolean everyFieldsWellFilled = true;
+        for (int i = 0; i < fieldsGrid.getChildren().size(); i++) {
+            if (!((GameField) (fieldsGrid.getChildren().get(i))).isWellFilled())
+                everyFieldsWellFilled = false;
+        }
+        if (everyFieldsWellFilled)
+            victory();
+        else
+            errorTimeline.playFromStart();
+    }
+
+    private void victory() {
+        root.getScene().setRoot(new VictoryBox());
     }
 }
