@@ -23,6 +23,7 @@
 }
 
 .victory-label {
+    -fx-font-size: 10em;
     -fx-text-fill: FORESTGREEN;
 }
 

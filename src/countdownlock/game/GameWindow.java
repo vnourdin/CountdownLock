@@ -1,19 +1,22 @@
 package countdownlock.game;
 
 import countdownlock.end.DefeatBox;
-import countdownlock.end.VictoryBox;
 import countdownlock.generic.MyIntegerProperties;
+import countdownlock.generic.URLLoader;
 import countdownlock.generic.WindowController;
 import javafx.animation.KeyFrame;
 import javafx.animation.KeyValue;
 import javafx.animation.Timeline;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.geometry.Insets;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
 import javafx.util.Duration;
+
+import java.io.IOException;
 
 public class GameWindow extends WindowController {
     @FXML
@@ -166,6 +169,10 @@ public class GameWindow extends WindowController {
     }
 
     private void victory() {
-        root.getScene().setRoot(new VictoryBox());
+        try {
+            root.getScene().setRoot(new FXMLLoader(URLLoader.getURL("end/VictoryWindow.fxml")).load());
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }
