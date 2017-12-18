@@ -1,6 +1,5 @@
 package countdownlock.game;
 
-import countdownlock.end.DefeatBox;
 import countdownlock.generic.MyIntegerProperties;
 import countdownlock.generic.URLLoader;
 import countdownlock.generic.WindowController;
@@ -72,7 +71,11 @@ public class GameWindow extends WindowController {
     }
 
     private void defeat() {
-        root.getScene().setRoot(new DefeatBox());
+        try {
+            root.getScene().setRoot(new FXMLLoader(URLLoader.getURL("end/DefeatWindow.fxml")).load());
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     private void stress() {

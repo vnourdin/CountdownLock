@@ -27,6 +27,11 @@
     -fx-text-fill: FORESTGREEN;
 }
 
+.defeat-label {
+    -fx-font-size: 10em;
+    -fx-text-fill: DARKRED;
+}
+
 .title {
     -fx-font-size: 5em;
     -fx-text-fill: WHITE;
