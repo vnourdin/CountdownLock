@@ -21,23 +21,15 @@ public class GameWindow extends WindowController {
     @FXML
     private GridPane fieldsGrid;
     @FXML
+    private FieldsGrid fieldsGridController;
+    @FXML
     private HBox countdown;
     @FXML
     private Countdown countdownController;
 
     public void initialize(String[] words, int duration, boolean help, boolean doStress) {
         countdownController.initialize(duration, doStress);
-        fulfillFields(words, help);
-    }
-
-    private void fulfillFields(String[] words, boolean help) {
-        for (int wordsIndice = 0, row = 0, column = 0; wordsIndice < words.length; wordsIndice++, column++) {
-            if (wordsIndice % 2 == 0) {
-                row++;
-                column = 0;
-            }
-            fieldsGrid.add(new GameField(words[wordsIndice], help), column, row);
-        }
+        fieldsGridController.initialize(words, help);
     }
 
     @FXML
@@ -52,12 +44,7 @@ public class GameWindow extends WindowController {
 
     @FXML
     private void handleConfirmButton() {
-        boolean everyFieldsWellFilled = true;
-        for (int i = 0; i < fieldsGrid.getChildren().size(); i++) {
-            if (!((GameField) (fieldsGrid.getChildren().get(i))).isWellFilled())
-                everyFieldsWellFilled = false;
-        }
-        if (everyFieldsWellFilled)
+        if (fieldsGridController.everyFieldIsWellFilled())
             victory();
         else
             errorLabelController.play();
