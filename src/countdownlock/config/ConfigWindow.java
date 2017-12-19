@@ -29,25 +29,10 @@ public class ConfigWindow extends WindowController {
         URL location = URLLoader.getURL("game/GameWindow.fxml");
         FXMLLoader loader = new FXMLLoader(location);
         Parent newRoot = loader.load();
-        loader.<GameWindow>getController().initialize(getWords(), getMinutes(), getHelp(), getStress());
+        loader.<GameWindow>getController()
+                .initialize(words.getText().split(" "), timer.getValue(), help.isSelected(), stress.isSelected());
 
         root.getScene().setRoot(newRoot);
-    }
-
-    private String[] getWords() {
-        return words.getText().split(" ");
-    }
-
-    private int getMinutes() {
-        return timer.getValue();
-    }
-
-    private boolean getHelp() {
-        return help.isSelected();
-    }
-
-    private boolean getStress() {
-        return stress.isSelected();
     }
 
     @FXML
