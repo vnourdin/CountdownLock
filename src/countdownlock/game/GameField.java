@@ -6,9 +6,9 @@ import javafx.scene.layout.Background;
 import javafx.scene.paint.Color;
 
 public class GameField extends TextField {
-    private String passphrase;
-    private Background correctBack = BackgroundFactory.get(Color.LIGHTBLUE);
-    private Background incorrectBack = BackgroundFactory.get(Color.INDIANRED);
+    private final String passphrase;
+    private final Background correctBack = BackgroundFactory.get(Color.LIGHTBLUE);
+    private final Background incorrectBack = BackgroundFactory.get(Color.INDIANRED);
 
     public GameField(String passphrase, boolean help) {
         super();

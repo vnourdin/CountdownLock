@@ -4,7 +4,7 @@ import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleStringProperty;
 
 public class MyIntegerProperties extends SimpleIntegerProperty {
-    private SimpleStringProperty stringProperty;
+    private final SimpleStringProperty stringProperty;
 
     public MyIntegerProperties(int value) {
         super(value);

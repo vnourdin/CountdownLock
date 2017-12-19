@@ -25,7 +25,7 @@ public class ConfigWindow extends WindowController {
     private Label submitLabel;
 
     @FXML
-    protected void handleSubmitButtonAction() throws IOException {
+    private void handleSubmitButtonAction() throws IOException {
         URL location = URLLoader.getURL("game/GameWindow.fxml");
         FXMLLoader loader = new FXMLLoader(location);
         Parent newRoot = loader.load();
@@ -51,7 +51,7 @@ public class ConfigWindow extends WindowController {
     }
 
     @FXML
-    protected void updateButtonState() {
+    private void updateButtonState() {
         if (!words.getText().isEmpty()) {
             submitButton.setDisable(false);
             submitLabel.setVisible(false);

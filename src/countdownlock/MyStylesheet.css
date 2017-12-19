@@ -47,10 +47,6 @@
     -fx-spacing: 20;
 }
 
-.config-pane {
-    -fx-spacing: 60;
-}
-
 .button {
     -fx-text-fill: DARKRED;
     -fx-font-size: 25px;
@@ -72,10 +68,6 @@
 
 .check-box > .box > .mark {
     -fx-padding: 1em;
-}
-
-.game-field {
-    -fx-font-size: 40px;
 }
 
 .fields-grid {
