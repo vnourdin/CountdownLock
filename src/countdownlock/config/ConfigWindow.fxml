@@ -4,7 +4,7 @@
 <?import javafx.scene.layout.*?>
 <VBox xmlns:fx="http://javafx.com/fxml"
       xmlns="http://javafx.com/javafx"
-      fx:controller="countdownlock.config.ConfigWindow"
+      fx:controller="countdownlock.config.ConfigWindowController"
       fx:id="root"
       styleClass="vbox">
 

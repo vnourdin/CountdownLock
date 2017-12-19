@@ -3,7 +3,7 @@
 <?import javafx.scene.layout.GridPane?>
 <GridPane xmlns:fx="http://javafx.com/fxml"
           xmlns="http://javafx.com/javafx"
-          fx:controller="countdownlock.game.FieldsGrid"
+          fx:controller="countdownlock.game.FieldsGridController"
           fx:id="fieldsGrid"
           styleClass="fields-grid"
           visible="false"/>

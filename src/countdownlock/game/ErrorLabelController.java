@@ -7,7 +7,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.util.Duration;
 
-public class ErrorLabel extends WindowController {
+public class ErrorLabelController extends WindowController {
     @FXML
     private Label errorLabel;
 

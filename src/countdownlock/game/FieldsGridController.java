@@ -4,7 +4,7 @@ import countdownlock.generic.WindowController;
 import javafx.fxml.FXML;
 import javafx.scene.layout.GridPane;
 
-public class FieldsGrid extends WindowController {
+public class FieldsGridController extends WindowController {
     @FXML
     private GridPane fieldsGrid;
 

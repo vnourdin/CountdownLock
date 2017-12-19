@@ -1,6 +1,6 @@
 package countdownlock.config;
 
-import countdownlock.game.GameWindow;
+import countdownlock.game.GameWindowController;
 import countdownlock.generic.URLLoader;
 import countdownlock.generic.WindowController;
 import javafx.fxml.FXML;
@@ -12,7 +12,7 @@ import java.io.IOException;
 import java.net.URL;
 
 
-public class ConfigWindow extends WindowController {
+public class ConfigWindowController extends WindowController {
     @FXML
     private TextField words;
     @FXML
@@ -29,7 +29,7 @@ public class ConfigWindow extends WindowController {
         URL location = URLLoader.getURL("game/GameWindow.fxml");
         FXMLLoader loader = new FXMLLoader(location);
         Parent newRoot = loader.load();
-        loader.<GameWindow>getController()
+        loader.<GameWindowController>getController()
                 .initialize(words.getText().split(" "), timer.getValue(), help.isSelected(), stress.isSelected());
 
         root.getScene().setRoot(newRoot);

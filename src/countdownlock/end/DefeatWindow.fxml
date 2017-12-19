@@ -4,7 +4,7 @@
 <?import javafx.scene.layout.VBox?>
 <VBox xmlns:fx="http://javafx.com/fxml"
       xmlns="http://javafx.com/javafx"
-      fx:controller="countdownlock.end.DefeatWindow"
+      fx:controller="countdownlock.end.DefeatWindowController"
       fx:id="root"
       styleClass="vbox">
     <Label styleClass="defeat-label"

@@ -4,7 +4,7 @@
 <?import javafx.scene.layout.HBox?>
 <HBox xmlns:fx="http://javafx.com/fxml"
       xmlns="http://javafx.com/javafx"
-      fx:controller="countdownlock.game.Countdown"
+      fx:controller="countdownlock.game.CountdownController"
       fx:id="root"
       styleClass="hbox, title-hbox">
 

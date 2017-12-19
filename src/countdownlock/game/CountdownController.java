@@ -16,7 +16,7 @@ import javafx.util.Duration;
 
 import java.io.IOException;
 
-public class Countdown extends WindowController {
+public class CountdownController extends WindowController {
     @FXML
     private Label minutesLabel, secondsLabel;
     private MyIntegerProperties minutes, seconds;

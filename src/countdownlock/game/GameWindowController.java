@@ -11,21 +11,21 @@ import javafx.scene.layout.HBox;
 
 import java.io.IOException;
 
-public class GameWindow extends WindowController {
+public class GameWindowController extends WindowController {
     @FXML
     private Button startButton, confirmButton;
     @FXML
     private Label errorLabel;
     @FXML
-    private ErrorLabel errorLabelController;
+    private ErrorLabelController errorLabelController;
     @FXML
     private GridPane fieldsGrid;
     @FXML
-    private FieldsGrid fieldsGridController;
+    private FieldsGridController fieldsGridController;
     @FXML
     private HBox countdown;
     @FXML
-    private Countdown countdownController;
+    private CountdownController countdownController;
 
     public void initialize(String[] words, int duration, boolean help, boolean doStress) {
         countdownController.initialize(duration, doStress);
