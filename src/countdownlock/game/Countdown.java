@@ -25,7 +25,7 @@ public class Countdown extends WindowController {
     private Insets normalInsets, stressInsets;
     private boolean doStress, isStressed;
 
-    public void init(int duration, boolean doStress) {
+    public void initialize(int duration, boolean doStress) {
         this.doStress = doStress;
         minutes = new MyIntegerProperties(duration);
         minutesLabel.textProperty().bind(minutes.getStringProperty());

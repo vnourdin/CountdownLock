@@ -29,7 +29,7 @@ public class ConfigWindow extends WindowController {
         URL location = URLLoader.getURL("game/GameWindow.fxml");
         FXMLLoader loader = new FXMLLoader(location);
         Parent newRoot = loader.load();
-        loader.<GameWindow>getController().init(getWords(), getMinutes(), getHelp(), getStress());
+        loader.<GameWindow>getController().initialize(getWords(), getMinutes(), getHelp(), getStress());
 
         root.getScene().setRoot(newRoot);
     }

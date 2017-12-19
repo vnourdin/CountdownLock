@@ -28,17 +28,13 @@ public class GameWindow extends WindowController {
     private Timeline errorTimeline;
     private int timer;
 
-    @FXML
-    public void initialize() {
-    }
-
-    public void init(String[] words, int duration, boolean help, boolean doStress) {
-        countdownController.init(duration, doStress);
-        fullfillFields(words, help);
+    public void initialize(String[] words, int duration, boolean help, boolean doStress) {
+        countdownController.initialize(duration, doStress);
+        fulfillFields(words, help);
         initErrorLabel();
     }
 
-    private void fullfillFields(String[] words, boolean help) {
+    private void fulfillFields(String[] words, boolean help) {
         for (int wordsIndice = 0, row = 0, column = 0; wordsIndice < words.length; wordsIndice++, column++) {
             if (wordsIndice % 2 == 0) {
                 row++;
