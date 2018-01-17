@@ -14,7 +14,7 @@ import java.net.URL;
 
 public class ConfigWindowController extends WindowController {
     @FXML
-    private TextField words;
+    private TextField words, code;
     @FXML
     private Spinner<Integer> timer;
     @FXML
@@ -30,14 +30,14 @@ public class ConfigWindowController extends WindowController {
         FXMLLoader loader = new FXMLLoader(location);
         Parent newRoot = loader.load();
         loader.<GameWindowController>getController()
-                .initialize(words.getText().split(" "), timer.getValue(), help.isSelected(), stress.isSelected());
+                .initialize(words.getText().split(" "), code.getText(), timer.getValue(), help.isSelected(), stress.isSelected());
 
         root.getScene().setRoot(newRoot);
     }
 
     @FXML
     private void updateButtonState() {
-        if (!words.getText().isEmpty()) {
+        if (!words.getText().isEmpty() && !code.getText().isEmpty()) {
             submitButton.setDisable(false);
             submitLabel.setVisible(false);
         } else {

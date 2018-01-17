@@ -7,6 +7,6 @@
       fx:controller="countdownlock.end.VictoryWindowController"
       fx:id="root"
       styleClass="vbox">
-    <Label styleClass="victory-label"
-           text="Bien joué!&#13;&#13;Vous et vos coéquipiers&#13;pouvez vous retourner.&#13;&#13;Code: 4 5 7"/>
+    <Label fx:id="victoryLabel"
+           styleClass="victory-label"/>
 </VBox>

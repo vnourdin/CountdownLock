@@ -27,10 +27,18 @@
 
         <Label styleClass="config-label"
                GridPane.rowIndex="2" GridPane.columnIndex="0"
+               text="Code du cadenas: "/>
+        <TextField fx:id="code"
+                   styleClass="config-field"
+                   GridPane.rowIndex="2" GridPane.columnIndex="1"
+                   onKeyReleased="#updateButtonState"/>
+
+        <Label styleClass="config-label"
+               GridPane.rowIndex="3" GridPane.columnIndex="0"
                text="Durée du chronomètre:"/>
         <Spinner fx:id="timer"
                  styleClass="config-field"
-                 GridPane.rowIndex="2" GridPane.columnIndex="1"
+                 GridPane.rowIndex="3" GridPane.columnIndex="1"
                  maxWidth="100"
                  initialValue="20"
                  min="5"
@@ -38,24 +46,24 @@
                  amountToStepBy="5"/>
 
         <Label styleClass="config-label"
-               GridPane.rowIndex="3" GridPane.columnIndex="0"
+               GridPane.rowIndex="4" GridPane.columnIndex="0"
                text="Activer l'aide:"/>
         <CheckBox fx:id="help"
-                  GridPane.rowIndex="3" GridPane.columnIndex="1"/>
-
-        <Label styleClass="config-label"
-               GridPane.rowIndex="4" GridPane.columnIndex="0"
-               text="Activer le mode stress:"/>
-        <CheckBox fx:id="stress"
                   GridPane.rowIndex="4" GridPane.columnIndex="1"/>
 
+        <Label styleClass="config-label"
+               GridPane.rowIndex="5" GridPane.columnIndex="0"
+               text="Activer le mode stress:"/>
+        <CheckBox fx:id="stress"
+                  GridPane.rowIndex="5" GridPane.columnIndex="1"/>
+
         <HBox
-                GridPane.rowIndex="5" GridPane.columnIndex="1"
+                GridPane.rowIndex="6" GridPane.columnIndex="1"
                 GridPane.halignment="RIGHT"
                 spacing="20">
             <Label fx:id="submitLabel"
                    styleClass="error-label"
-                   text="Vous devenez entrer&#13;au moins un mot."/>
+                   text="Vous devez entrer au moins&#13;un mot et un code."/>
             <Button fx:id="submitButton"
                     text="Valider"
                     disable="true"
