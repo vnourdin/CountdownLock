@@ -8,5 +8,5 @@
       fx:id="root"
       styleClass="vbox">
     <Label styleClass="victory-label"
-           text="Bravo&#13;vous avez&#13;gagné!"/>
+           text="Bien joué!&#13;&#13;Vous et vos coéquipiers&#13;pouvez vous retourner.&#13;&#13;Code: 4 5 7"/>
 </VBox>
